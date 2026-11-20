@@ -2,6 +2,22 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-20 (later): weekend FB-strength campaign launched (looking for the MEGATRON trend)
+- Goal (PO): find a regime where stronger FB gives lower M* but f_esc rising faster than 1/M*, so x_HII(z) is *higher*
+  (MEGATRON, Choustikov+2026). Levers ranked (KB reds_feedback_sf.md): E_SN, mech vs thermal, hydro order, M_max strong;
+  t_SNII weak (z = 9 scan: M* ~ t_SNII^0.2).
+- All runs: production hydro (build_avg, runtime averages.txt), mechanical FB, eta_SNII 0.2, SSP BPASS M_max = 300 table.
+  - **Series A** (smooth SF: eps 0.03 (n/n_th)^0.5 <= 0.1, n_th 0.1, t_SNII 10 Myr): snx2 / snx4 / snx10
+    (4e49 / 8e49 / 2e50 erg/Msun; snx10 = hypernova-like, beyond MEGATRON).
+  - **Series B** (bursty SF: eps 0.3, n_th 10, t_SNII 3 Myr = early, HN-like energy): snx2 / snx5 / snx10. Why: in the z = 7
+    discs only this recipe cleared its birth regions (transmission up to 0.98), so f_esc has room to respond to FB.
+  - M_max pair: `h2_eps0.03n0.5c0.1_mech_snx4_ssp100` vs `_ssp300`.
+- Analysis (`runs/reio_v2/auto_fbw.sh`): dashboards at a = 0.090 / 0.100 / 0.110 / 0.120 / 0.130 (z = 10.1 to 6.7) as each run
+  passes them (batch QOS), `compare_fbw_<A|B|M>_z<z>` per series, and `fbw_trend/fbtrend_a<a>.{txt,png}`: M*, Ndot, global
+  f_esc (ray-traced, M1), escaping rate and x_HII per run, with the slope d log f_esc / d log M* between neighbours
+  (MEGATRON-like needs slope < -1 and x_HII rising as M* falls). Reference at z = 9 (existing runs, thermal vs mech,
+  eps0.03n0.5c0.1): slope -0.80 (RT) / -0.52 (M1), more stars win.
+
 ## 2026-11-20 (later): BPASS M_max = 100 vs 300 twins launched
 - New stellar emission tables (PO, remade from BPASS v2.2.1 binary imf135_100 / imf135_300 spectra): single-burst (SSP)
   emissivity + M_AB1600 + UV-slope tables, in `src_files/` (on Frontier: `REDS_src_files/`). The M_max = 100 SSP table is
