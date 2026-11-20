@@ -48,6 +48,8 @@ mkdir -p $H/reports; cp -u $R/sf_halo_diag/report_2026-11-17/report.pdf $H/repor
 # configs: dyablo inis of the cosmological boxes, RAMSES twins, disc templates
 mkdir -p $H/inis/boxB $H/inis/ramses_box $H/inis/disc_z7
 cp -u $V/*.ini $H/inis/boxB/
+# stellar emission tables (dyablo [rad] emissivity_file, dashboard UV magnitudes)
+mkdir -p $H/src_files && cp -u /lustre/orion/ast031/proj-shared/pocvirk/CoDaIII/prod_sr/pocvirk/dyablo/28102026/REDS_src_files/* $H/src_files/
 for n in $R/ramses_box/*/*.nml; do [ "$(basename $n)" = run.nml ] || cp -u $n $H/inis/ramses_box/; done
 cp -u $R/disc_z7/z7_1e10_mE1_e0.03_n0.1_t10.ini $R/disc_z7/z7_1e10_mE1_e0.03_n0.1_t3.ini $R/disc_z7/make_inis.py $H/inis/disc_z7/
 

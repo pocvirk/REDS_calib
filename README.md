@@ -34,7 +34,7 @@ Start with [`JOURNAL.md`](JOURNAL.md) (dated findings), then the comparison figu
 | cosmology | H0 = 67.06, Om = 0.3175, Ob = 0.049, sigma_8 = 0.8344, n_s = 0.9624 (Planck-like) |
 | ICs | grafic, z = 100, `ics/boxB_4mpc_256/level_008` (same ICs in dyablo and RAMSES) |
 | AMR | levels 6-10, blocks of 4^3 -> dx_min = 1.46 ckpc (146 pc physical at z = 9, 240 pc at z = 5); quasi-Lagrangian refinement |
-| RT | M1, 1 group, c_rad = 0.01 c, BPASS v2.2.1 binary Kroupa M_max = 100 Msun emissivity (5 Myr constant-SFR particles, Z = 0.001, to 200 Myr; M_max = 300 planned, see JOURNAL 2026-11-20), black body 5e4 K opacity, H chemistry (Chem_Ramses) |
+| RT | M1, 1 group, c_rad = 0.01 c, BPASS v2.2.1 binary Kroupa M_max = 100 Msun emissivity (5 Myr constant-SFR particles, Z = 0.001, to 200 Myr; `_ssp<M>` runs: single-burst tables with M_max = 100 / 300, `src_files/`), black body 5e4 K opacity, H chemistry (Chem_Ramses) |
 | stars | particle mass 1e4 Msun; Schmidt law rho_dot = eps rho / t_ff above n_th |
 | SN | eta_SNII = 0.2, E_SNII = 1e51 erg, M_SNII = 10 Msun (1 SN / 50 Msun formed = 2e49 erg/Msun; `snx<k>`: k x that; MEGATRON fiducial 0.85e49, Bursty 4.2e49), t_SNII = 10 Myr unless stated |
 | feedback | thermal (default), Kimm & Cen 2014 mechanical (`mech`), or delayed cooling (`dc`) |
@@ -104,6 +104,7 @@ fixed recipe, see `JOURNAL.md`).
 | `h2_eps0.03n0.5c0.1_mech_snx2` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10 | running (z ~ 9.1) |
 | `h2_eps0.03_mech_snx2_t3`, `_t20` | **h2** | 0.03 | mech, 2x SN, t_SNII 3 / 20 | t_SNII scan, running (z ~ 8.5 / 9.5) |
 | `h2_eps0.3_mech_n10_snx2_t10` | **h2** | 0.3, n_th 10 | mech, 2x SN, t10 | t_SNII scan, running (z ~ 12.9) |
+| `h2_eps0.03n0.5c0.1_mech_snx4_ssp100`, `_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 4x SN, t10 | BPASS SSP M_max 100 vs 300 (`src_files/`); started 2026-11-20 |
 
 ## Updating
 

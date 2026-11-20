@@ -2,6 +2,17 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-20 (later): BPASS M_max = 100 vs 300 twins launched
+- New stellar emission tables (PO, remade from BPASS v2.2.1 binary imf135_100 / imf135_300 spectra): single-burst (SSP)
+  emissivity + M_AB1600 + UV-slope tables, in `src_files/` (on Frontier: `REDS_src_files/`). The M_max = 100 SSP table is
+  identical to the one the dashboard already used for UV magnitudes. At Z = 0.001, M_max = 300 gives 1.9x the ionizing
+  rate at 1 Myr and +38% photons per Msun over 200 Myr (1.23e61 vs 8.9e60). Stars younger than 1 Myr (first table age)
+  get the 1 Myr value, in dyablo and in the dashboard.
+- Twins `h2_eps0.03n0.5c0.1_mech_snx4_ssp100` / `_ssp300`: density-dependent eps (0.03 (n/n_th)^0.5 <= 0.1, n_th 0.1),
+  mechanical FB, 4x SN (8e49 erg/Msun, ~2x MEGATRON Bursty), t_SNII 10 Myr, eta_SNII 0.2, production hydro (build_avg,
+  runtime averages.txt). Both differ from the snx2 parent in the SN energy and in the emission history (SSP instead of
+  5 Myr constant SFR), so compare them with each other. The dashboard takes UV magnitudes from the run's own table.
+
 ## 2026-11-20 (later): MEGATRON feedback levers (Choustikov et al. 2026, arXiv:2611.15931; Katz et al. arXiv:2411.07282)
 - MEGATRON (RAMSES-RTZ, ~5 pc, zoom on a Milky Way progenitor): the model with the **fewest** galaxies (100% eps_ff in
   lower-density gas + hypernovae) reionizes fastest (volume almost fully ionized at z ~ 8.5, vs 1/3 for the "Efficient"
