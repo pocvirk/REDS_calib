@@ -2,6 +2,35 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-20 (later): MEGATRON feedback levers (Choustikov et al. 2026, arXiv:2611.15931; Katz et al. arXiv:2411.07282)
+- MEGATRON (RAMSES-RTZ, ~5 pc, zoom on a Milky Way progenitor): the model with the **fewest** galaxies (100% eps_ff in
+  lower-density gas + hypernovae) reionizes fastest (volume almost fully ionized at z ~ 8.5, vs 1/3 for the "Efficient"
+  model, which has 10x more UV-bright galaxies). Their f_esc rises faster than 1/M*; ours does not
+  (d log f_esc / d log M* = -0.8 ray-traced, -0.5 M1, thermal vs mechanical at z = 9), so in our boxes more stars still
+  means more ionization.
+- Their key timescale: burst -> efficient LyC escape = 2.5 Myr (HN), 4 Myr (Bursty, 5x E_SN), 11 Myr (Efficient). Late
+  escape is wasted ("remnant leakers": high f_esc, no young stars). Our global f_esc is photon-weighted, so it already
+  discounts them. At 150 pc the birth cloud is one cell and its photons are injected at full luminosity (implicit
+  birth-cloud f_esc = 1): resolution favours high-M* runs.
+- **Levers** (specific SN energy, eta E_SNII / M_SNII; E_SNII and M_SNII are degenerate in dyablo):
+
+  | model | erg per Msun formed | timing |
+  |---|---|---|
+  | MEGATRON fiducial (Kroupa, 1e51 per 8-25 Msun star = 1 SN / 115 Msun) | 0.85e49 | individual SNe, ~7-40 Myr |
+  | REDS base (eta 0.2, M_SNII 10) | 2e49 | all at t_SNII |
+  | REDS `snx2` (most runs) | 4e49 | all at t_SNII |
+  | MEGATRON Bursty (5e51 per SN) | 4.2e49 | ~7-40 Myr |
+  | MEGATRON HN (>= 25 Msun stars, up to 10x E_SN, mass/Z dependent fraction) | <~3e49 | from ~3.5 Myr |
+  | REDS `snx5` (PO: "E_SN up to 10e51", exploration beyond MEGATRON) | 1e50 | all at t_SNII |
+
+  Our `t3` runs are an extreme early-energy (HN-like) case. MEGATRON's space maps onto our (snx, t_SNII) plane.
+- **IMF upper mass**: MEGATRON uses BPASS Kroupa binary with M_max = 300 Msun (BPASS `imf135_300`); REDS uses
+  M_max = 100 Msun (`cstSFR_5Myr_BPASSv2.2.1_kroupa_binary_MMax=100`, from dashboard_rc). Decision (PO): move to
+  M_max = 300 for new runs. No M_max = 300 table exists on disk (dashboard_rc has M_max = 100 only; the RAMSES SED.zip has
+  BC03 only; RAMSES `utils/py/sed_utils.py` converts BC03 / Starburst99, not BPASS): needs the BPASS v2.2.1 `imf135_300`
+  binary ionizing tables.
+- Next diagnostic: f_esc and escaping photon rate vs star-particle age (our own burst -> escape delay).
+
 ## 2026-11-20: t_SNII scan at z = 9 (production hydro)
 `comparisons/compare_tsn_z9`
 - Same snapshot (a = 0.100):

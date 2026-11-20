@@ -34,9 +34,9 @@ Start with [`JOURNAL.md`](JOURNAL.md) (dated findings), then the comparison figu
 | cosmology | H0 = 67.06, Om = 0.3175, Ob = 0.049, sigma_8 = 0.8344, n_s = 0.9624 (Planck-like) |
 | ICs | grafic, z = 100, `ics/boxB_4mpc_256/level_008` (same ICs in dyablo and RAMSES) |
 | AMR | levels 6-10, blocks of 4^3 -> dx_min = 1.46 ckpc (146 pc physical at z = 9, 240 pc at z = 5); quasi-Lagrangian refinement |
-| RT | M1, 1 group, c_rad = 0.01 c, BPASS emissivity (Z = 0.001, to 200 Myr), black body 5e4 K opacity, H chemistry (Chem_Ramses) |
+| RT | M1, 1 group, c_rad = 0.01 c, BPASS v2.2.1 binary Kroupa M_max = 100 Msun emissivity (5 Myr constant-SFR particles, Z = 0.001, to 200 Myr; M_max = 300 planned, see JOURNAL 2026-11-20), black body 5e4 K opacity, H chemistry (Chem_Ramses) |
 | stars | particle mass 1e4 Msun; Schmidt law rho_dot = eps rho / t_ff above n_th |
-| SN | eta_SNII = 0.2, E_SNII = 1e51 erg, M_SNII = 10 Msun (1 SN / 50 Msun formed), t_SNII = 10 Myr unless stated |
+| SN | eta_SNII = 0.2, E_SNII = 1e51 erg, M_SNII = 10 Msun (1 SN / 50 Msun formed = 2e49 erg/Msun; `snx<k>`: k x that; MEGATRON fiducial 0.85e49, Bursty 4.2e49), t_SNII = 10 Myr unless stated |
 | feedback | thermal (default), Kimm & Cen 2014 mechanical (`mech`), or delayed cooling (`dc`) |
 | hydro | `h2_` runs: validated production hydro (RK2 + minmod, e_int-conserving remap, RAMSES-like refinement, smallp 1e-50, Compton cooling, adiabat fallback for negative pressure). Older runs: 1st order (see caveat below) |
 | z_end | 5 |
