@@ -2,6 +2,24 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-20: t_SNII scan at z = 9 (production hydro)
+`comparisons/compare_tsn_z9`
+- Same snapshot (a = 0.100):
+
+  | recipe | x_HII (vol) | global f_esc ray-traced / M1 | M* in halos [Msun] | Ndot [ph/s] |
+  |---|---|---|---|---|
+  | eps0.03_mech_snx2_t3_h2 | 0.015 | 0.248 / 0.168 | 4.5e7 | 0.96e53 |
+  | eps0.03_mech_snx2_t10_h2 | 0.019 | 0.179 / 0.174 | 5.1e7 | 1.21e53 |
+  | eps0.03_mech_snx2_t20_h2 | 0.025 | 0.206 / 0.211 | 6.7e7 | 1.35e53 |
+  | eps0.03n0.5c0.1_mech_snx2_t10_h2 | 0.022 | 0.248 / 0.231 | 4.7e7 | 0.87e53 |
+  | eps0.03n0.5c0.1_th_t10_h2 | 0.048 | 0.110 / 0.135 | 1.3e8 | 3.6e53 |
+
+- In the box, a longer t_SNII mainly lets more stars form before the first SN (CSFRD of t20 is ~0.15 dex higher at z > 10;
+  SMHM up at 1e9 Msun); f_esc moves little and not monotonically (unlike the isolated discs, where t10 raised f_esc 2-3x).
+  x_HII rises 1.7x from t3 to t20, still far below the thermal density-dependent recipe.
+- Density-dependent eps + mechanical FB: f_esc as high as the best constant-eps case, but 2.8x fewer stars than with
+  thermal FB, so half the x_HII. Thermal FB with density-dependent eps remains the only recipe on track at z = 9.
+
 ## 2026-11-19 (later): production hydro vs 1st order at z = 8.09
 `comparisons/compare_h2_z8.09`
 - Same 6 runs at a = 0.110:
