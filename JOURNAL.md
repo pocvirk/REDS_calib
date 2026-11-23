@@ -2,6 +2,19 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23 (12:50): FB campaign, first z = 8.1 points (series A 2x / 4x, M_max pair)
+`comparisons/compare_fbw_A_z8.09`, `comparisons/compare_fbw_M_z8.09`, `comparisons/fbw_trend/fbtrend_a0.110.*`
+- **Series A 2x keeps pulling ahead: x_HII 0.115 at z = 8.1** vs 0.054 for 4x (2.5x more stars, 8.9e7 vs 3.5e7 Msun;
+  f_esc RT 0.23 vs 0.48, slope -0.77: partial MEGATRON trend, more stars win on x_HII). Its SMHM lies ~0.2-0.3 dex
+  above the extrapolated Behroozi+19 relation at 1-2e9 Msun (4x: on / just below it); f_esc ~0.6 below 1e8 Msun, falling
+  to 0.15-0.25 at 1-2e9 Msun (CoDa: 0.5 at 1e9).
+- For scale at z = 8.09 (older runs, 5 Myr constant-SFR M_max 100 table, `compare_tsn_z8.09`): thermal FB with the same
+  eps had x_HII 0.102 with M* 3.0e8 Msun. **Series A 2x ionizes more with 3.4x fewer stars**: closest to the MEGATRON
+  picture across recipes so far (mech + M_max 300 vs thermal + M_max 100).
+- M_max pair: 300 vs 100 gives x_HII 0.054 vs 0.029 (+90%, as at z = 9), escaping rate +57%, same M*, f_esc 0.48 vs 0.43.
+- Series A 10x (z ~ 8.0) and series B (z ~ 8.1-8.2; 10x at 9.3) not at z = 8.1 yet. No crashes; the 7 campaign runs
+  restarted ~11:30 after the queue stall. `h2_eps0.03_mech_snx2_t3` finished at z = 5 with x_HII 0.22 (t10 twin 0.30).
+
 ## 2026-11-23 (11:30): campaign figures captioned with the series and closest MEGATRON recipe
 - Every `compare_fbw_*` figure now carries a caption (new `compare_dashboard.py --title`): series A and pair M = smooth SF
   (closest MEGATRON recipe: smooth), series B = bursty SF (closest MEGATRON recipe: bursty; its eps 0.3 is also high).
