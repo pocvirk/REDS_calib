@@ -2,6 +2,17 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23 (18:30): Gamma now averaged over ionized cells with x_HII > 0.99
+- PO: Gamma must be the average over ionized regions, x_HII > 0.99. Until now the dashboard Gamma was Gamma_ion with
+  x_HII > 0.5 (runtime AveragesLogger and snapshot averages alike). New `averages.gamma_ion_history` (dyablo_tools,
+  local): Gamma over cells with x_HII > 0.99 from the snapshots (rho, rho_HII, e_rad), cached per snapshot,
+  `<run>/dashboard/gamma_ion_x0.99.txt`; used by `run_dashboard.py` and `compare_dashboard.py` (title states the cut;
+  runs without the file fall back to x > 0.5 and the title says so). Backfilled for the 7 campaign runs (37 s, debug job);
+  all campaign comparisons regenerated.
+- Effect: x > 0.99 Gamma is 1.4-2.2x the x > 0.5 one (A 2x at z = 7: 5.5e-14 vs 3.8e-14 s^-1; all-cell average 8e-15).
+  Still 0.5-1 dex below the z = 6 measurements, but the campaign runs are at z ~ 7 and far from overlap
+  (x_HII > 0.99 volume fraction 0.18 for A 2x at z = 7).
+
 ## 2026-11-23 (18:00): FB campaign at z = 7.3; series A 2x through the Hoag+19 point
 `comparisons/compare_fbw_{A,B,M}_z7.33`, `comparisons/compare_fbw_B_z8.09`, `compare_fbw_B_z9.00` (10x added), `fbw_trend/fbtrend_a0.{100,110,120}.*`
 - **Series A 2x: x_HII 0.20 at z = 7.33**, through the Hoag+19 point (z ~ 7.6) and still rising steeply. 2x / 4x / 10x:

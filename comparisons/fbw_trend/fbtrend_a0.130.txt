@@ -1,0 +1,7 @@
+a = 0.13 (z = 6.69)
+series   run                                              a  M*[Msun]      Ndot   f_RT   f_M1  Ndot_esc   x_HII
+A        eps0.03n0.5c0.1_mech_snx4_t10_ssp300_h2     0.1300  8.59e+07  1.75e+53  0.357  0.377  6.23e+52  0.1302
+
+series A: smooth SF (closest MEGATRON recipe: smooth): eps0.03 (n/n_th)^0.5 <= 0.1, mech, t_SNII 10 Myr, SN x2/4/10, M_max 300
+
+per series, neighbours ordered by M*: slope s = dlog f_esc/dlog M* (RT, M1); partial MEGATRON trend if s < 0 (f_esc anticorrelated with M*), full if also x_HII rises as M* falls (needs s < ~-1)
