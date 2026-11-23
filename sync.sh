@@ -24,6 +24,9 @@ for d in $V/compare_*/ $R/ramses_box/compare_*/; do s=$(basename $d); [ ${d#$R/r
 done
 [ -f $V/compare_z8.png ] && cp -u $V/compare_z8.png $H/comparisons/compare_z8.09/compare_z8_custom.png
 
+# FB-strength campaign trend tables (runs/reio_v2/fbtrend.py via auto_fbw.sh)
+[ -d $V/fbw_trend ] && { cp_png $V/fbw_trend $H/comparisons/fbw_trend; cp -u $V/fbw_trend/*.txt $H/comparisons/fbw_trend/ 2>/dev/null || true; }
+
 # halo maps
 cp_png $V/porosity_z9 $H/maps/porosity_z9; cp -u $V/porosity_z9/halo_porosity_summary.txt $H/maps/porosity_z9/ 2>/dev/null || true
 
@@ -56,6 +59,6 @@ cp -u $R/disc_z7/z7_1e10_mE1_e0.03_n0.1_t10.ini $R/disc_z7/z7_1e10_mE1_e0.03_n0.
 # analysis / job scripts not in dyablo_tools
 mkdir -p $H/scripts
 cp -u $V/halo_porosity_maps.py $V/snap_at.py $V/auto_h2z.sh $V/h2one.sl $V/chain_h2one.sh $V/porosity_z9/porosity.sl \
-      $R/disc_z7/plot_z7_tsn.py $R/disc_z7/analyse_z7.py $R/disc_z7/raytrace_z7.py $H/scripts/
+      $V/fbtrend.py $V/auto_fbw.sh $V/avgone.sl $V/chain_avgone.sh $V/dash_fbw.sl $R/disc_z7/plot_z7_tsn.py $R/disc_z7/analyse_z7.py $R/disc_z7/raytrace_z7.py $H/scripts/
 cp -u $B/knowledge_base/research/dyablo/reio_runs_naming.md $H/scripts/.kb_naming_snapshot.md 2>/dev/null || true
 echo "synced into $H ($(du -sh --exclude=.git $H | cut -f1))"

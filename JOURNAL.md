@@ -2,6 +2,17 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23 (later): FB campaign, first point: BPASS M_max 100 vs 300 at z = 10.1
+`comparisons/compare_fbw_M_z10.11`, `comparisons/fbw_trend/fbtrend_a0.090.*`
+- Twins eps0.03n0.5c0.1_mech_snx4_t10 with the SSP M_max = 100 / 300 tables: same stars (M* 1.45e7 / 1.37e7 Msun, SMHM
+  identical), same f_esc (0.52 ray-traced, 0.43-0.44 M1, flat ~0.5 from 1e8 to 1e9 Msun, on the CoDa 1e9 value),
+  **+30% intrinsic and escaping photons** (3.8e52 vs 2.9e52 ph/s) and **x_HII 0.026 vs 0.015 (+77%)**. M_max 300 shifts
+  x_HII(z) by ~0.15 dex at all z < 15: more photons right after each burst (1.9x at 1 Myr), when f_esc is highest.
+- For scale at z = 10.1 (older 5 Myr constant-SFR M_max 100 table): mech snx2 x_HII 0.014, thermal (same eps) 0.022.
+  With M_max 300 and 4x SN the mechanical run is already ahead of the thermal one.
+- UV LF: no galaxies brighter than M_UV ~ -13 yet (4 cMpc/h box); no constraint at this z.
+- The other campaign runs (series A snx2 / snx10, series B) are at z ~ 9.9-11.4 (5th job); their z = 10.1 dashboards follow.
+
 ## 2026-11-23: first h2 run finished (z = 5): eps0.03n0.5c0.1_th_t10_h2
 `comparisons/compare_h2_z5`, `dashboards/h2_epsn0.03c0.1`
 - Thermal FB, density-dependent eps (0.03 (n/n_th)^0.5 <= 0.1), production hydro: **x_HII 0.96 at z = 5** (0.25 at z = 7,

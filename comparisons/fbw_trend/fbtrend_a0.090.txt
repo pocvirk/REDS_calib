@@ -1,0 +1,6 @@
+a = 0.09 (z = 10.11)
+series   run                                              a  M*[Msun]      Ndot   f_RT   f_M1  Ndot_esc   x_HII
+M        eps0.03n0.5c0.1_mech_snx4_t10_ssp100_h2     0.0900  1.45e+07  2.89e+52  0.517  0.431  1.49e+52  0.0145
+A        eps0.03n0.5c0.1_mech_snx4_t10_ssp300_h2     0.0900  1.37e+07  3.77e+52  0.524  0.440  1.98e+52  0.0256
+
+per series, neighbours ordered by M*: slope s = dlog f_esc/dlog M* (RT, M1); MEGATRON-like if s < -1 and x_HII rises as M* falls

@@ -12,6 +12,7 @@ Start with [`JOURNAL.md`](JOURNAL.md) (dated findings), then the comparison figu
 | folder | content |
 |---|---|
 | `comparisons/<set>/` | multi-run overlays at one redshift (`compare_dashboard.py`): CSFRD, UV LF, SMHM + f_esc vs halo mass, x_HII(z), x_HI, Gamma, tau, HMF, flows. `dashboard_compare.pdf` = all panels in one file. Each set has a `README.md` listing its runs and labels |
+| `comparisons/fbw_trend/` | FB-strength campaign: M*, f_esc, escaping rate, x_HII per run and f_esc-M* slopes at each target z (MEGATRON trend test) |
 | `dashboards/<run>/` | single-run dashboard (`run_dashboard.py`); galaxy plots carry the redshift in the file name, IGM plots are the full history |
 | `idealised_test_cases/` | the 4 hydro validation tests (pancake, Galilean pancake, adiabatic cosmo T_halo vs T_vir, single SN): figures, reference values, pass criteria, setups |
 | `maps/` | halo maps (gas / HI columns, temperature, escape sky maps), e.g. `porosity_z9/` |
@@ -84,7 +85,7 @@ fixed recipe, see `JOURNAL.md`).
 `<SF>_<FB: th|mech|dc>[_snx<k>]_t<t_SNII>[_<hydro>]`, e.g. `eps0.3_mech_n10_snx2_t3_h2`. Older comparison sets
 (`compare_z7.7`, `compare_z8.09`, `compare_codalike_z9`, `ramses_box_*`) use run names as labels.
 
-## Run index (status 2026-11-23, 01:00 EST)
+## Run index (status 2026-11-23, 07:00 EST)
 
 | run | hydro | SF | FB | status / role |
 |---|---|---|---|---|
@@ -104,9 +105,9 @@ fixed recipe, see `JOURNAL.md`).
 | `h2_eps0.03n0.5c0.1_mech_snx2` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10 | running (z ~ 6.7) |
 | `h2_eps0.03_mech_snx2_t3`, `_t20` | **h2** | 0.03 | mech, 2x SN, t_SNII 3 / 20 | t_SNII scan, running (z ~ 6.4 / 7.2) |
 | `h2_eps0.3_mech_n10_snx2_t10` | **h2** | 0.3, n_th 10 | mech, 2x SN, t10 | t_SNII scan, running (z ~ 9.9) |
-| `h2_eps0.03n0.5c0.1_mech_snx4_ssp100`, `_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 4x SN, t10 | BPASS SSP M_max 100 vs 300 (`src_files/`); running (z ~ 13.5 / 13.3) |
-| `h2_eps0.03n0.5c0.1_mech_snx2_ssp300`, `_snx10_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x / 10x SN, t10, M_max 300 | FB campaign series A; running (z ~ 13.2 / 13.9) |
-| `h2_eps0.3_mech_n10_snx{2,5,10}_t3_ssp300` | **h2** | 0.3, n_th 10 | mech, 2x / 5x / 10x SN, t3, M_max 300 | FB campaign series B; running (z ~ 13.9 / 14.5 / 15.1) |
+| `h2_eps0.03n0.5c0.1_mech_snx4_ssp100`, `_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 4x SN, t10 | BPASS SSP M_max 100 vs 300 (`src_files/`); running (z ~ 9.5 / 9.6); `compare_fbw_M_z10.11` |
+| `h2_eps0.03n0.5c0.1_mech_snx2_ssp300`, `_snx10_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x / 10x SN, t10, M_max 300 | FB campaign series A; running (z ~ 9.9 / 10.4) |
+| `h2_eps0.3_mech_n10_snx{2,5,10}_t3_ssp300` | **h2** | 0.3, n_th 10 | mech, 2x / 5x / 10x SN, t3, M_max 300 | FB campaign series B; running (z ~ 10.4 / 10.3 / 11.4) |
 
 ## Updating
 
