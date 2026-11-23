@@ -2,6 +2,25 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23 (11:00): FB campaign at z = 9; series B shows the MEGATRON trend
+`comparisons/compare_fbw_{A,B,M}_z9.00`, `comparisons/compare_fbw_B_z10.11` (10x added), `comparisons/fbw_trend/fbtrend_a0.{090,100}.*`
+- **Series B (bursty: eps 0.3, n_th 10, t3) is MEGATRON-like at every step.** At z = 10.1 (2x / 5x / 10x SN): M* 2.8e7 /
+  1.0e7 / 7.5e6 Msun, f_esc RT 0.046 / 0.100 / 0.245 (M1 0.023 / 0.070 / 0.164), x_HII 0.0042 / 0.0049 / **0.0072**.
+  The 5x -> 10x slope d log f_esc / d log M* is **-2.9** (RT and M1): f_esc rises faster than 1/M*, so the run with the
+  fewest stars also has the highest escaping photon rate. At z = 9 (2x / 5x; 10x not there yet): M* 6.6e7 / 2.0e7,
+  f_esc 0.07 / 0.14, x_HII 0.0062 / **0.0078**.
+- But series B reionizes 5-8x less than series A: bursty SF keeps f_esc low (0.05-0.25) until FB clears the gas.
+- **Series A (smooth: eps0.03n0.5c0.1, t10) at z = 9: more stars win.** 2x / 4x / 10x: M* 4.7e7 / 2.3e7 / 1.3e7, f_esc RT
+  0.30 / 0.52 / 0.57, x_HII **0.061** / 0.040 / 0.052. f_esc saturates near 0.5-0.6 at 4x, so stronger FB only removes
+  photons. The 10x run led x_HII(z) until z ~ 10 and the 2x run overtook it at z ~ 9.8. Slopes -0.75 (2x -> 4x),
+  -0.17 (4x -> 10x).
+- So the trend appears where f_esc is far from saturation (bursty, dense SF): FB has room to raise f_esc. Where f_esc is
+  already ~0.5 (smooth SF, mech FB, 1e8-1e9 Msun halos), M* wins.
+- M_max pair at z = 9: M_max 300 gives x_HII 0.040 vs 0.021 (+90%; +77% at z = 10.1), escaping rate +68%, and now a higher
+  f_esc too (0.52 vs 0.41 RT; equal at z = 10.1).
+- Queue stalled again from ~10:00 (chain jobs estimated to start 14:00-16:00). The pending dashboard jobs were moved to the
+  debug QOS with `scontrol update` (same job id, watcher unaffected).
+
 ## 2026-11-23 (08:00): FB campaign, series A and B at z = 10.1
 `comparisons/compare_fbw_A_z10.11`, `comparisons/compare_fbw_B_z10.11`, `comparisons/fbw_trend/fbtrend_a0.090.*`
 - **Series A** (eps0.03n0.5c0.1, mech, t10, M_max 300; SN energy 2x / 4x / 10x): stronger FB removes stars cleanly

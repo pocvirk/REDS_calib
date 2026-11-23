@@ -4,10 +4,12 @@ A        eps0.03n0.5c0.1_mech_snx10_t10_ssp300_h2    0.0900   8.7e+06  2.28e+52 
 A        eps0.03n0.5c0.1_mech_snx2_t10_ssp300_h2     0.0900  2.37e+07  1.09e+53  0.439  0.444  4.78e+52  0.0317
 M        eps0.03n0.5c0.1_mech_snx4_t10_ssp100_h2     0.0900  1.45e+07  2.89e+52  0.517  0.431  1.49e+52  0.0145
 A        eps0.03n0.5c0.1_mech_snx4_t10_ssp300_h2     0.0900  1.37e+07  3.77e+52  0.524  0.440  1.98e+52  0.0256
+B        eps0.3_n10_mech_snx10_t3_ssp300_h2          0.0900  7.49e+06   3.7e+52  0.245  0.164  9.07e+51  0.0072
 B        eps0.3_n10_mech_snx2_t3_ssp300_h2           0.0900  2.83e+07  1.76e+53  0.046  0.023  8.13e+51  0.0042
 B        eps0.3_n10_mech_snx5_t3_ssp300_h2           0.0900  1.02e+07  6.43e+52  0.100  0.070  6.43e+51  0.0049
 
 per series, neighbours ordered by M*: slope s = dlog f_esc/dlog M* (RT, M1); MEGATRON-like if s < -1 and x_HII rises as M* falls
   A: eps0.03n0.5c0.1_mech_snx10_t10_ssp300_h2 (M* 8.7e+06, x 0.0343) vs eps0.03n0.5c0.1_mech_snx4_t10_ssp300_h2 (M* 1.4e+07, x 0.0256): s_RT -0.41 s_M1 -0.31 -> MEGATRON-like (low M* run ionizes more)
   A: eps0.03n0.5c0.1_mech_snx4_t10_ssp300_h2 (M* 1.4e+07, x 0.0256) vs eps0.03n0.5c0.1_mech_snx2_t10_ssp300_h2 (M* 2.4e+07, x 0.0317): s_RT -0.32 s_M1 +0.02 -> more stars win
+  B: eps0.3_n10_mech_snx10_t3_ssp300_h2 (M* 7.5e+06, x 0.0072) vs eps0.3_n10_mech_snx5_t3_ssp300_h2 (M* 1e+07, x 0.0049): s_RT -2.95 s_M1 -2.80 -> MEGATRON-like (low M* run ionizes more)
   B: eps0.3_n10_mech_snx5_t3_ssp300_h2 (M* 1e+07, x 0.0049) vs eps0.3_n10_mech_snx2_t3_ssp300_h2 (M* 2.8e+07, x 0.0042): s_RT -0.75 s_M1 -1.09 -> MEGATRON-like (low M* run ionizes more)
