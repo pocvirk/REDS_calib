@@ -12,7 +12,10 @@ Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
   eps had x_HII 0.102 with M* 3.0e8 Msun. **Series A 2x ionizes more with 3.4x fewer stars**: closest to the MEGATRON
   picture across recipes so far (mech + M_max 300 vs thermal + M_max 100).
 - M_max pair: 300 vs 100 gives x_HII 0.054 vs 0.029 (+90%, as at z = 9), escaping rate +57%, same M*, f_esc 0.48 vs 0.43.
-- Series A 10x (z ~ 8.0) and series B (z ~ 8.1-8.2; 10x at 9.3) not at z = 8.1 yet. No crashes; the 7 campaign runs
+- Update 13:50: **series A complete at z = 8.1**: 2x / 4x / 10x M* 8.9e7 / 3.5e7 / 1.8e7, f_esc RT 0.23 / 0.48 / 0.62,
+  x_HII **0.115** / 0.054 / 0.065. Same ranking as at z = 9 (2x > 10x > 4x); 10x vs 4x is the full MEGATRON step, 2x vs
+  4x the partial one. Series B 5x: M* 3.9e7, f_esc 0.14, x_HII 0.012 (2x, 10x not there yet). Queue stalled again
+  (10 chain jobs pending, estimated 15:40-16:40). No crashes; the 7 campaign runs
   restarted ~11:30 after the queue stall. `h2_eps0.03_mech_snx2_t3` finished at z = 5 with x_HII 0.22 (t10 twin 0.30).
 
 ## 2026-11-23 (11:30): campaign figures captioned with the series and closest MEGATRON recipe
