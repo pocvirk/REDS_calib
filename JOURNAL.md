@@ -2,6 +2,16 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23 (18:50): M_max pair at z = 6.7; t_SNII scan finished at z = 5
+`comparisons/compare_fbw_M_z6.69`, `comparisons/fbw_trend/fbtrend_a0.130.*`
+- M_max 300 vs 100 at z = 6.69: same M* (8.6e7 Msun), intrinsic photons +39%, f_esc 0.36 vs 0.27 (RT; M1 0.38 vs 0.28),
+  escaping rate +81%, **x_HII 0.130 vs 0.065 (2.0x)**. The x_HII ratio keeps growing: 1.77 (z = 10.1), 1.90 (9, 8.1, 7.3),
+  2.0 (6.7); since z = 9 M_max 300 also raises f_esc, not only the photon budget.
+- `h2_eps0.03_mech_snx2_t20` finished at z = 5: x_HII 0.36. The production t_SNII scan (eps 0.03, mech, 2x SN, old M_max 100
+  table) ends at x_HII 0.22 / 0.30 / 0.36 for t_SNII 3 / 10 / 20 Myr: a longer delay gives more stars and more
+  ionization, the same ordering as at every earlier z. Only `h2_eps0.3_mech_n10_snx2_t10` (z ~ 7.1) is still running.
+- Campaign runs at z ~ 6.5-7.1 (B 10x at 8.0); all 8 remaining chain jobs pending (queue, estimated start 19:36). No crashes.
+
 ## 2026-11-23 (18:30): Gamma now averaged over ionized cells with x_HII > 0.99
 - PO: Gamma must be the average over ionized regions, x_HII > 0.99. Until now the dashboard Gamma was Gamma_ion with
   x_HII > 0.5 (runtime AveragesLogger and snapshot averages alike). New `averages.gamma_ion_history` (dyablo_tools,
