@@ -12,6 +12,9 @@ Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 - Effect: x > 0.99 Gamma is 1.4-2.2x the x > 0.5 one (A 2x at z = 7: 5.5e-14 vs 3.8e-14 s^-1; all-cell average 8e-15).
   Still 0.5-1 dex below the z = 6 measurements, but the campaign runs are at z ~ 7 and far from overlap
   (x_HII > 0.99 volume fraction 0.18 for A 2x at z = 7).
+- PO: keep both estimates. Gamma plots now show solid = mean over x_HII > 0.99 cells, dashed = Gamma_V / x_HII,V (the
+  ramses-cudaton estimate, Gamma ~ 0 in neutral cells; equal to the x > 0.5 cell mean within a few %). The ratio sits
+  0.15-0.35 dex below the x > 0.99 mean (partly ionized I-front / self-shielded cells in x_V), most at high z and in 10x.
 
 ## 2026-11-23 (18:00): FB campaign at z = 7.3; series A 2x through the Hoag+19 point
 `comparisons/compare_fbw_{A,B,M}_z7.33`, `comparisons/compare_fbw_B_z8.09`, `compare_fbw_B_z9.00` (10x added), `fbw_trend/fbtrend_a0.{100,110,120}.*`
