@@ -2,6 +2,20 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23 (18:00): FB campaign at z = 7.3; series A 2x through the Hoag+19 point
+`comparisons/compare_fbw_{A,B,M}_z7.33`, `comparisons/compare_fbw_B_z8.09`, `compare_fbw_B_z9.00` (10x added), `fbw_trend/fbtrend_a0.{100,110,120}.*`
+- **Series A 2x: x_HII 0.20 at z = 7.33**, through the Hoag+19 point (z ~ 7.6) and still rising steeply. 2x / 4x / 10x:
+  M* 1.6e8 / 5.6e7 / 2.4e7 Msun, f_esc RT 0.19 / 0.41 / 0.55, x_HII **0.201** / 0.079 / 0.076. The 10x run fell behind
+  4x between z = 8.1 and 7.3, so the ranking is now strictly "more stars win" (partial trend at both steps: f_esc
+  anticorrelated with M*, slopes -0.34 / -0.74). 2x SMHM ~0.3-0.4 dex above the extrapolated Behroozi+19 at 2-4e9 Msun
+  (4x on it, 10x below); 2x f_esc falls from ~0.5 at 1e8 to 0.1 at 4e9 Msun.
+- **Series B keeps the full MEGATRON trend at every z.** z = 9 (all three): M* 6.6e7 / 2.0e7 / 1.3e7, f_esc RT 0.07 / 0.14 /
+  0.31, x_HII 0.0062 / 0.0078 / **0.0109** (slope 5x -> 10x -1.7). z = 8.1 (2x / 5x): f_esc 0.02 / 0.14 (slope -1.6), x_HII
+  0.011 / 0.012. z = 7.3 (2x / 5x): M* 2.6e8 / 6.9e7, f_esc 0.03 / 0.06, x_HII 0.015 / 0.023. Still ~10x below series A 2x.
+- M_max pair at z = 7.3: same M* (5.6e7), f_esc 0.41 vs 0.32, x_HII 0.079 vs 0.041 (+90%, steady since z = 9).
+- Production h2 runs finished at z = 5: `h2_eps0.3_mech_n10_snx2` x_HII 0.35, `h2_eps0.03n0.5c0.1_mech_snx2` x_HII 0.44
+  (thermal twin 0.96); `h2_eps0.03_mech_snx2_t20` at z = 5.01. These use the old constant-SFR M_max 100 table.
+
 ## 2026-11-23 (12:50): FB campaign, first z = 8.1 points (series A 2x / 4x, M_max pair)
 `comparisons/compare_fbw_A_z8.09`, `comparisons/compare_fbw_M_z8.09`, `comparisons/fbw_trend/fbtrend_a0.110.*`
 - **Series A 2x keeps pulling ahead: x_HII 0.115 at z = 8.1** vs 0.054 for 4x (2.5x more stars, 8.9e7 vs 3.5e7 Msun;
