@@ -2,6 +2,17 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23: first h2 run finished (z = 5): eps0.03n0.5c0.1_th_t10_h2
+`comparisons/compare_h2_z5`, `dashboards/h2_epsn0.03c0.1`
+- Thermal FB, density-dependent eps (0.03 (n/n_th)^0.5 <= 0.1), production hydro: **x_HII 0.96 at z = 5** (0.25 at z = 7,
+  through the Hoag+19 point at z ~ 7.6; below the Davies/Mason z ~ 7 points). Best reionization history so far.
+- vs the same recipe in 1st-order hydro: 16% fewer stars (7.0e9 vs 8.3e9 Msun in halos), same intrinsic photon rate,
+  **2.2x higher global f_esc** (0.035 vs 0.016; f_esc(1e10 Msun) 0.03-0.05 vs ~0.01, on the CoDa value), x_HII 0.96 vs 0.88.
+  So the hydro lever gives the MEGATRON-like direction here (fewer stars, more ionization), unlike the FB levers so far.
+- Still too many stars: CSFRD ~0.5 dex above Bouwens+14 at z = 6-8, SMHM ~0.5-1 dex above Behroozi at 1e10 Msun, UV LF
+  above Bouwens at M_UV > -18. Next step for this recipe: fewer stars at fixed f_esc.
+- vs eps 0.01 (dyablo/RAMSES matched): similar M* (1e10) but f_esc 6x higher -> x_HII 0.96 vs 0.31 / 0.43.
+
 ## 2026-11-23: t_SNII scan at z = 8.09; Frontier queue stalled the weekend campaign
 `comparisons/compare_tsn_z8.09` (+ `fbtrend_a0.110.{txt,png}`)
 - t_SNII stays a weak lever at z = 8.09 (eps 0.03, mech, 2x SN; t_SNII 3 / 10 / 20 Myr): M* 9.0e7 / 9.8e7 / 1.17e8 Msun

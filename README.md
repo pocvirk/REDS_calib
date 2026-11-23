@@ -98,7 +98,7 @@ fixed recipe, see `JOURNAL.md`).
 | `epsn0.03c0.1_chemfix` | 1st | 0.03 (n/n_th)^0.5 <= 0.1 | thermal, t10 | z = 5, x_HII 0.88 |
 | `eps0.01_*` hydro scan | various | 0.01 | thermal | dyablo vs RAMSES hydro study |
 | `eps0.01_rk2_ei_rr_cmp` | production | 0.01 | thermal, t10 | baseline matched to `RAMSES_eps0.01_s1_b0_ics`; galaxies match RAMSES at z = 5 |
-| `h2_epsn0.03c0.1` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | thermal, t10 | running (z ~ 5.3) |
+| `h2_epsn0.03c0.1` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | thermal, t10 | **done (z = 5), x_HII 0.96**; `compare_h2_z5` |
 | `h2_eps0.03_mech_snx2` | **h2** | 0.03 | mech, 2x SN, t10 | running (z ~ 5.8) |
 | `h2_eps0.3_mech_n10_snx2` | **h2** | 0.3, n_th 10 | mech, 2x SN, **t3** | running (z ~ 6.3) |
 | `h2_eps0.03n0.5c0.1_mech_snx2` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10 | running (z ~ 6.7) |
