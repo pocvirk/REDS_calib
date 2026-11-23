@@ -2,6 +2,21 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23 (08:00): FB campaign, series A and B at z = 10.1
+`comparisons/compare_fbw_A_z10.11`, `comparisons/compare_fbw_B_z10.11`, `comparisons/fbw_trend/fbtrend_a0.090.*`
+- **Series A** (eps0.03n0.5c0.1, mech, t10, M_max 300; SN energy 2x / 4x / 10x): stronger FB removes stars cleanly
+  (M* 2.4e7 / 1.4e7 / 8.7e6 Msun; SMHM down ~2x per step at 1e8-1e9 Msun) and raises f_esc (RT 0.44 / 0.52 / 0.63; the
+  10x run reaches f_esc ~ 1 above 2e8 Msun). x_HII 0.032 / 0.026 / **0.034**: **not monotonic**. 10x vs 4x is
+  MEGATRON-like (fewer stars, more ionization), 4x vs 2x is not. The slopes d log f_esc / d log M* are only -0.3 to -0.4 (RT).
+- The 10x run has the highest x_HII but the *lowest* escaping photon rate at this snapshot (1.4e52 vs 4.8e52 ph/s for 2x).
+  x_HII integrates the history (10x has been on top since z ~ 15), and weaker clumping / fewer recombinations around the
+  sources could also help. One snapshot of the escaping rate does not rank the runs; the z = 9 point will tell.
+- **Series B** (eps 0.3, n_th 10, mech, t3, M_max 300; 2x / 5x): 2.8x fewer stars with 5x SN, f_esc doubles (0.05 -> 0.10 RT,
+  0.02 -> 0.07 M1, slope -0.75 RT / -1.09 M1), x_HII 0.0042 -> 0.0049: **MEGATRON-like, marginally** (M1 slope beyond -1).
+  But bursty SF traps photons: f_esc 5-10x lower than series A and x_HII 6-8x lower. The 10x run is at z ~ 10.8.
+- Production h2 runs: `h2_eps0.03_mech_snx2` finished at z = 5 with x_HII 0.30 (thermal twin with density-dependent eps:
+  0.96). Others at z ~ 5.3-6.0; `h2_eps0.3_mech_n10_snx2_t10` at z ~ 8.2.
+
 ## 2026-11-23 (later): FB campaign, first point: BPASS M_max 100 vs 300 at z = 10.1
 `comparisons/compare_fbw_M_z10.11`, `comparisons/fbw_trend/fbtrend_a0.090.*`
 - Twins eps0.03n0.5c0.1_mech_snx4_t10 with the SSP M_max = 100 / 300 tables: same stars (M* 1.45e7 / 1.37e7 Msun, SMHM
