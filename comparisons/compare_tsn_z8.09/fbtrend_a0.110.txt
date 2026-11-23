@@ -1,0 +1,12 @@
+a = 0.11 (z = 8.09)
+series   run                                              a  M*[Msun]      Ndot   f_RT   f_M1  Ndot_esc   x_HII
+T        eps0.03_mech_snx2_t3                        0.1100     9e+07  2.29e+53  0.154  0.109  3.52e+52  0.0241
+T        eps0.03_mech_snx2_t10                       0.1100   9.8e+07  2.13e+53  0.118  0.116  2.53e+52  0.0320
+T        eps0.03_mech_snx2_t20                       0.1100  1.17e+08   2.2e+53  0.117  0.135  2.57e+52  0.0394
+F        eps0.03n0.5c0.1_mech_snx2_t10               0.1100  8.41e+07  1.66e+53  0.174  0.182  2.88e+52  0.0355
+F        eps0.03n0.5c0.1_th_t10                      0.1100  3.02e+08  7.22e+53  0.111  0.133  8.05e+52  0.1019
+
+per series, neighbours ordered by M*: slope s = dlog f_esc/dlog M* (RT, M1); MEGATRON-like if s < -1 and x_HII rises as M* falls
+  F: eps0.03n0.5c0.1_mech_snx2_t10 (M* 8.4e+07, x 0.0355) vs eps0.03n0.5c0.1_th_t10 (M* 3e+08, x 0.1019): s_RT -0.35 s_M1 -0.25 -> more stars win
+  T: eps0.03_mech_snx2_t3 (M* 9e+07, x 0.0241) vs eps0.03_mech_snx2_t10 (M* 9.8e+07, x 0.0320): s_RT -3.07 s_M1 +0.72 -> more stars win
+  T: eps0.03_mech_snx2_t10 (M* 9.8e+07, x 0.0320) vs eps0.03_mech_snx2_t20 (M* 1.2e+08, x 0.0394): s_RT -0.09 s_M1 +0.84 -> more stars win

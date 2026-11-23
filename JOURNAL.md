@@ -2,6 +2,20 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23: t_SNII scan at z = 8.09; Frontier queue stalled the weekend campaign
+`comparisons/compare_tsn_z8.09` (+ `fbtrend_a0.110.{txt,png}`)
+- t_SNII stays a weak lever at z = 8.09 (eps 0.03, mech, 2x SN; t_SNII 3 / 10 / 20 Myr): M* 9.0e7 / 9.8e7 / 1.17e8 Msun
+  (M* ~ t_SNII^0.14), x_HII 0.024 / 0.032 / 0.039. Longer delay -> more stars -> more ionization, as at z = 9.
+- t3 has the highest instantaneous ray-traced f_esc (0.15 vs 0.12) and escaping rate (3.5e52 vs 2.5e52 ph/s) at this
+  snapshot, yet the lowest x_HII: x_HII integrates the whole history, and t3 was already behind at z = 9 (0.015 vs 0.019).
+  One snapshot of f_esc is noisy (M1 ranks the runs the other way: 0.11 / 0.12 / 0.14).
+- Mechanical vs thermal (density-dependent eps): 3.6x fewer stars, 1.6x higher f_esc (RT), x_HII 0.036 vs 0.102.
+  Slope d log f_esc / d log M* = -0.35 (RT) / -0.25 (M1): further from the MEGATRON regime (< -1) than at z = 9
+  (-0.8 / -0.5), and the x_HII gap grows (2.2x at z = 9, 2.9x now). Only the thermal run is near the Hoag+19 point.
+- Weekend FB campaign (series A / B, M_max pair): queued from 2026-11-20 10:30 to 2026-11-22 ~21:45 behind 1920- and
+  4096-node jobs (~500-600 small jobs ahead, shorter walltime gave no earlier start). All 7 runs started their 1st job
+  then; at 2026-11-23 01:00 they are at z ~ 13-15 (2nd job). First FB-trend point (z = 10.1) expected within a day.
+
 ## 2026-11-20 (later): weekend FB-strength campaign launched (looking for the MEGATRON trend)
 - Goal (PO): find a regime where stronger FB gives lower M* but f_esc rising faster than 1/M*, so x_HII(z) is *higher*
   (MEGATRON, Choustikov+2026). Levers ranked (KB reds_feedback_sf.md): E_SN, mech vs thermal, hydro order, M_max strong;
