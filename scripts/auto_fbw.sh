@@ -21,6 +21,11 @@ say() { echo "$(date +%F_%T) $*" >> $LOG; }
 aexp_of() { grep -oE "aexp=[0-9.e-]+" $R/$1.log 2>/dev/null | tail -1 | cut -d= -f2; }
 past() { local x; x=$(aexp_of $1); [ -n "$x" ] && awk -v a=$2 -v x=$x 'BEGIN{exit !(x > a+0.001)}'; }
 zof() { awk -v a=$1 'BEGIN{printf "%.2f", 1/a-1}'; }
+# figure captions: series name + closest MEGATRON recipe (2026-11-23, PO request)
+stitle() { case $1 in
+  A) echo "series A: smooth SF (closest MEGATRON recipe: smooth): eps0.03 (n/n_th)^0.5 <= 0.1, mech, t_SNII 10 Myr, SN x2/4/10, M_max 300";;
+  B) echo "series B: bursty SF (closest MEGATRON recipe: bursty; also high eps): eps 0.3, n_th 10, mech, t_SNII 3 Myr, SN x2/5/10, M_max 300";;
+  M) echo "pair M: smooth SF (closest MEGATRON recipe: smooth), mech SN x4, t_SNII 10 Myr: BPASS M_max 100 vs 300";; esac; }
 say "start (pid $$)"
 for loop in $(seq 1 1000); do
   args=""; todo=""
@@ -39,7 +44,7 @@ for loop in $(seq 1 1000); do
   done
   changed=""
   if [ -n "$args" ] && ! squeue -h -u $USER -n dash_fbw 2>/dev/null | grep -q .; then
-    j=$(sbatch --parsable dash_fbw.sl $args 2>>$LOG)
+    j=$(sbatch --parsable -q debug -t 00:30:00 dash_fbw.sl $args 2>>$LOG)   # debug QOS since 2026-11-23 (auto_tsn done; batch queue stalled)
     if [ -n "$j" ]; then
       say "dashboards job $j:$args"
       while squeue -h -j $j 2>/dev/null | grep -q .; do sleep 120; done
@@ -65,7 +70,7 @@ for loop in $(seq 1 1000); do
         { [ $sr = $ser ] || { [ $ser = M ] && [ $n = h2_eps0.03n0.5c0.1_mech_snx4_ssp300 ]; }; } && { L="$L $R/$n:$lab"; k=$((k+1)); }
       done
       if [ $k -ge 2 ]; then
-        python -I $H/compare_dashboard.py --out $R/compare_fbw_${ser}_z$z --z $z $L > $R/compare_fbw_${ser}_z$z.log 2>&1
+        python -I $H/compare_dashboard.py --out $R/compare_fbw_${ser}_z$z --z $z --title "$(stitle $ser)" $L > $R/compare_fbw_${ser}_z$z.log 2>&1
         say "compare $ser z=$z rc=$? ($k runs) -> compare_fbw_${ser}_z$z"
       fi
     done

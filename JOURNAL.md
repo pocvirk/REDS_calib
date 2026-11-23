@@ -2,6 +2,17 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-23 (11:30): campaign figures captioned with the series and closest MEGATRON recipe
+- Every `compare_fbw_*` figure now carries a caption (new `compare_dashboard.py --title`): series A and pair M = smooth SF
+  (closest MEGATRON recipe: smooth), series B = bursty SF (closest MEGATRON recipe: bursty; its eps 0.3 is also high).
+  `fbtrend_*` legends are prefixed with the series key and list the series definitions; its verdict line now separates
+  the partial trend (f_esc anticorrelated with M*) from the full one (x_HII also rises as M* falls). All z = 10.1 and z = 9
+  figures regenerated.
+- PO's reading: series B reproduces the trend but ionizes far less than series A; series A with 2x SN looks closest to
+  working out in M*, f_esc and x_HII at once.
+- `auto_fbw.sh` restarted (state kept) with the captions and with its dashboard jobs on the debug QOS (~2 min each; the
+  batch queue is stalled and `auto_tsn.sh` no longer uses the debug job).
+
 ## 2026-11-23 (11:00): FB campaign at z = 9; series B shows the full MEGATRON trend, series A a partial one
 `comparisons/compare_fbw_{A,B,M}_z9.00`, `comparisons/compare_fbw_B_z10.11` (10x added), `comparisons/fbw_trend/fbtrend_a0.{090,100}.*`
 - **Series B (bursty: eps 0.3, n_th 10, t3) is MEGATRON-like at every step.** At z = 10.1 (2x / 5x / 10x SN): M* 2.8e7 /
