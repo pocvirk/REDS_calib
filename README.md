@@ -85,7 +85,7 @@ fixed recipe, see `JOURNAL.md`).
 `<SF>_<FB: th|mech|dc>[_snx<k>]_t<t_SNII>[_<hydro>]`, e.g. `eps0.3_mech_n10_snx2_t3_h2`. Older comparison sets
 (`compare_z7.7`, `compare_z8.09`, `compare_codalike_z9`, `ramses_box_*`) use run names as labels.
 
-## Run index (status 2026-11-24, 07:00 EST)
+## Run index (status 2026-11-24, 12:50 EST)
 
 | run | hydro | SF | FB | status / role |
 |---|---|---|---|---|
@@ -104,10 +104,14 @@ fixed recipe, see `JOURNAL.md`).
 | `h2_eps0.3_mech_n10_snx2` | **h2** | 0.3, n_th 10 | mech, 2x SN, **t3** | **done (z = 5), x_HII 0.35** |
 | `h2_eps0.03n0.5c0.1_mech_snx2` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10 | **done (z = 5), x_HII 0.44** |
 | `h2_eps0.03_mech_snx2_t3`, `_t20` | **h2** | 0.03 | mech, 2x SN, t_SNII 3 / 20 | t_SNII scan: t3 **done (z = 5), x_HII 0.22**; t20 **done (z = 5), x_HII 0.36** |
-| `h2_eps0.3_mech_n10_snx2_t10` | **h2** | 0.3, n_th 10 | mech, 2x SN, t10 | t_SNII scan, running (z ~ 5.9) |
-| `h2_eps0.03n0.5c0.1_mech_snx4_ssp100`, `_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 4x SN, t10 | BPASS SSP M_max 100 vs 300 (`src_files/`); **done (z = 5), x_HII 0.23 / 0.41**; `compare_fbw_M_z10.11`, `_z9.00`, `_z8.09`, `_z7.33`, `_z6.69` |
-| `h2_eps0.03n0.5c0.1_mech_snx2_ssp300`, `_snx10_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x / 10x SN, t10, M_max 300 | FB campaign series A; **done (z = 5), x_HII 0.96 (2x) / 0.14 (10x)** (4x: 0.41); `compare_fbw_A_z10.11`, `_z9.00`, `_z8.09`, `_z7.33`, `_z6.69`, `_z5.90` |
-| `h2_eps0.3_mech_n10_snx{2,5,10}_t3_ssp300` | **h2** | 0.3, n_th 10 | mech, 2x / 5x / 10x SN, t3, M_max 300 | FB campaign series B; running (z ~ 5.4 / 5.5 / 6.1); `compare_fbw_B_z10.11`, `_z9.00`, `_z8.09`, `_z7.33`, `_z6.69` |
+| `h2_eps0.3_mech_n10_snx2_t10` | **h2** | 0.3, n_th 10 | mech, 2x SN, t10 | t_SNII scan, running (z ~ 5.5) |
+| `h2_eps0.03n0.5c0.1_mech_snx4_ssp100`, `_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 4x SN, t10 | BPASS SSP M_max 100 vs 300 (`src_files/`); **done (z = 5), x_HII 0.23 / 0.41**; `compare_fbw_M_z10.11`, `_z9.00`, `_z8.09`, `_z7.33`, `_z6.69`, `_z5.90`, `_z5.00` |
+| `h2_eps0.03n0.5c0.1_mech_snx2_ssp300`, `_snx10_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x / 10x SN, t10, M_max 300 | FB campaign series A; **done (z = 5), x_HII 0.96 (2x) / 0.14 (10x)** (4x: 0.41); 2x is the **fiducial model** since 2026-11-24; `compare_fbw_A_z10.11`, `_z9.00`, `_z8.09`, `_z7.33`, `_z6.69`, `_z5.90`, `_z5.00` |
+| `h2_eps0.3_mech_n10_snx{2,5,10}_t3_ssp300` | **h2** | 0.3, n_th 10 | mech, 2x / 5x / 10x SN, t3, M_max 300 | FB campaign series B; 2x **done (z = 5), x_HII 0.12**; 5x / 10x running (z ~ 5.01 / 5.56); `compare_fbw_B_z10.11`, `_z9.00`, `_z8.09`, `_z7.33`, `_z6.69`, `_z5.90` |
+| `h2_eps0.03n0.5c0.1_snx2_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | **thermal**, 2x SN, t10, M_max 300 | fiducial follow-up: FB type (thermal twin of the fiducial); running (z ~ 13) |
+| `h2_eps0.03_mech_snx2_ssp300` | **h2** | **0.03 const** | mech, 2x SN, t10, M_max 300 | fiducial follow-up: is sqrt(n) SF needed?; running (z ~ 13) |
+| `h2_eps0.03n0.5c0.1_mech_snx2_ssp300_crad0.1` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10, M_max 300 | fiducial follow-up: **c_rad 0.1 c** from the ICs (reion_accel on); running (z ~ 16.6), slow: RT subcycling |
+| `boxC_h2_eps0.03n0.5c0.1_mech_snx2_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10, M_max 300 | fiducial follow-up: **8 cMpc/h box** (512^3, levels 7-11, same resolution), 8 nodes; running (z ~ 15) |
 
 ## Updating
 

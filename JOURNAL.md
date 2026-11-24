@@ -2,6 +2,31 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-24 (12:50): series B at z = 5.9 (FB strength no longer matters for x_HII); M_max pair at z = 5.9 / 5; fiducial follow-ups launched
+`comparisons/compare_fbw_B_z5.90`, `compare_fbw_M_z5.90`, `compare_fbw_M_z5.00`, `compare_fbw_A_z5.00`, `fbw_trend/fbtrend_a0.{145,167}.*`
+- **Series B (bursty SF; closest MEGATRON recipe: bursty, also high eps; t_SNII 3) at z = 5.90:** 2x / 5x / 10x:
+  M* 8.4e8 / 1.9e8 / 7.4e7 Msun, f_esc RT 0.021 / 0.16 / 0.24, x_HII **0.064 / 0.055 / 0.056**. f_esc compensates M*
+  almost exactly: the escaping photon rates are 3.8 / 5.5 / 3.0e52 ph/s and the three x_HII(z) curves lie on top of each
+  other. Formally 10x vs 5x is still a "full" MEGATRON step (x 0.0556 vs 0.0546), but the difference (2%) is noise; 2x has
+  the highest x_HII (partial step 5x vs 2x). So series B shows the f_esc-M* anticorrelation at every z, and a full trend only
+  at z >= 7.3; at z <= 6.7 FB strength is neutral for x_HII. All B runs stay far below the z ~ 7 constraints (x_HII < 0.07
+  at z = 6). B 2x ended at x_HII 0.12 (z = 5).
+- **Series A (smooth SF; closest MEGATRON recipe: smooth; t_SNII 10) at z = 5 (run end, all done):** 2x / 4x / 10x M*
+  1.4e9 / 2.7e8 / 5.9e7, f_esc RT 0.061 / 0.17 / 0.35, x_HII **0.96** / 0.41 / 0.14 (partial trend at both steps, slopes
+  -0.62 / -0.48).
+- **M_max 100 vs 300 (smooth, mech 4x SN, t_SNII 10):** same M* (2.8e8 / 2.7e8 at z = 5), the M_max 300 run has 1.4x the
+  intrinsic photon rate, a higher f_esc (0.17 vs 0.14) and **1.8-1.9x the x_HII**: 0.23 vs 0.41 at z = 5, 0.12 vs 0.23 at z = 5.9.
+- **Fiducial model:** PO chose A 2x (`h2_eps0.03n0.5c0.1_mech_snx2_ssp300`) as the fiducial. Four follow-up runs started
+  08:13 to test the physics choices around it (run index): thermal twin (FB type), constant eps 0.03 (is the sqrt(n) SF law
+  needed?), c_rad 0.1 c from the ICs (reion_accel on), and an 8 cMpc/h box (512^3, same resolution, 8 nodes). At 12:50 they
+  are at z ~ 13 / 13 / 16.6 / 15.
+- **c_rad 0.1 c is slow:** after the first stars the radiation step is ~1/1000 of the hydro step, so each hydro step needs
+  hundreds of RT subcycles (~50 min per 100 iterations on 1 node). Speed test from the same checkpoint (iterations 400 -> 500):
+  1 / 2 / 4 / 8 GPUs took 39 / **28** / 36 / 54 min, so the run is communication-bound and 2 GPUs is fastest. An 8-node job is
+  being timed; the run will then move to the fastest layout. First relaunches lost ~2.3 node-hours (no checkpoint within
+  the 2 h job, then an inline ini comment, which dyablo's ini parser rejects).
+- Production `h2_eps0.3_mech_n10_snx2_t10` at z ~ 5.5. No campaign crashes.
+
 ## 2026-11-24 (07:00): series A, M_max pair finished at z = 5; A 2x reionizes the box (x_HII 0.96)
 `comparisons/compare_fbw_A_z5.90`, `compare_fbw_B_z6.69` (10x added), `fbw_trend/fbtrend_a0.{130,145}.*`
 - **Final x_HII at z = 5 (volume / mass):** A 2x **0.96 / 0.88**, A 4x 0.41 / 0.43, A 10x 0.14, M_max 100 twin of A 4x
