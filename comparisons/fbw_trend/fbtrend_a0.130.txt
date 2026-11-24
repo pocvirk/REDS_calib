@@ -4,6 +4,7 @@ A        eps0.03n0.5c0.1_mech_snx10_t10_ssp300_h2    0.1300  2.92e+07  2.17e+52 
 A        eps0.03n0.5c0.1_mech_snx2_t10_ssp300_h2     0.1300  2.99e+08  7.37e+53  0.152  0.221  1.12e+53  0.3335
 M        eps0.03n0.5c0.1_mech_snx4_t10_ssp100_h2     0.1300  8.61e+07  1.26e+53  0.273  0.280  3.44e+52  0.0651
 A        eps0.03n0.5c0.1_mech_snx4_t10_ssp300_h2     0.1300  8.59e+07  1.75e+53  0.357  0.377  6.23e+52  0.1302
+B        eps0.3_n10_mech_snx10_t3_ssp300_h2          0.1300  4.65e+07  6.22e+52  0.149  0.187  9.24e+51  0.0398
 B        eps0.3_n10_mech_snx2_t3_ssp300_h2           0.1298  4.41e+08  7.14e+53  0.021  0.019  1.46e+52  0.0442
 B        eps0.3_n10_mech_snx5_t3_ssp300_h2           0.1300  1.08e+08  2.17e+53  0.113  0.057  2.44e+52  0.0348
 
@@ -14,4 +15,5 @@ pair M: smooth SF (closest MEGATRON recipe: smooth), mech SN x4, t_SNII 10 Myr: 
 per series, neighbours ordered by M*: slope s = dlog f_esc/dlog M* (RT, M1); partial MEGATRON trend if s < 0 (f_esc anticorrelated with M*), full if also x_HII rises as M* falls (needs s < ~-1)
   A: eps0.03n0.5c0.1_mech_snx10_t10_ssp300_h2 (M* 2.9e+07, x 0.0859) vs eps0.03n0.5c0.1_mech_snx4_t10_ssp300_h2 (M* 8.6e+07, x 0.1302): s_RT -0.31 s_M1 -0.03 -> partial: f_esc anticorrelated with M*, but too shallow, more stars win on x_HII
   A: eps0.03n0.5c0.1_mech_snx4_t10_ssp300_h2 (M* 8.6e+07, x 0.1302) vs eps0.03n0.5c0.1_mech_snx2_t10_ssp300_h2 (M* 3e+08, x 0.3335): s_RT -0.68 s_M1 -0.43 -> partial: f_esc anticorrelated with M*, but too shallow, more stars win on x_HII
+  B: eps0.3_n10_mech_snx10_t3_ssp300_h2 (M* 4.6e+07, x 0.0398) vs eps0.3_n10_mech_snx5_t3_ssp300_h2 (M* 1.1e+08, x 0.0348): s_RT -0.33 s_M1 -1.42 -> full MEGATRON trend (lower-M* run has higher f_esc and higher x_HII)
   B: eps0.3_n10_mech_snx5_t3_ssp300_h2 (M* 1.1e+08, x 0.0348) vs eps0.3_n10_mech_snx2_t3_ssp300_h2 (M* 4.4e+08, x 0.0442): s_RT -1.21 s_M1 -0.79 -> partial: f_esc anticorrelated with M*, but too shallow, more stars win on x_HII

@@ -16,10 +16,12 @@ h2_eps0.3_mech_n10_snx2_t3_ssp300:eps0.3_n10_mech_snx2_t3_ssp300_h2:B
 h2_eps0.3_mech_n10_snx5_t3_ssp300:eps0.3_n10_mech_snx5_t3_ssp300_h2:B
 h2_eps0.3_mech_n10_snx10_t3_ssp300:eps0.3_n10_mech_snx10_t3_ssp300_h2:B
 h2_eps0.03n0.5c0.1_mech_snx4_ssp100:eps0.03n0.5c0.1_mech_snx4_t10_ssp100_h2:M"
-TARGETS="0.090 0.100 0.110 0.120 0.130"
+TARGETS="0.090 0.100 0.110 0.120 0.130 0.145 0.1667"   # 2026-11-24: + z = 5.90 (nearest snapshot to z = 6) and z = 5 (run end, a = 1/6)
 say() { echo "$(date +%F_%T) $*" >> $LOG; }
 aexp_of() { grep -oE "aexp=[0-9.e-]+" $R/$1.log 2>/dev/null | tail -1 | cut -d= -f2; }
-past() { local x; x=$(aexp_of $1); [ -n "$x" ] && awk -v a=$2 -v x=$x 'BEGIN{exit !(x > a+0.001)}'; }
+past() { local x; x=$(aexp_of $1); [ -n "$x" ] && awk -v a=$2 -v x=$x 'BEGIN{exit !(x > a+0.001)}' && return 0
+  # run end (a = 1/6): the chain prints ALL DONE once the last snapshot is written
+  [ "$2" = 0.1667 ] && tail -1 $R/chain_$1.log 2>/dev/null | grep -q "ALL DONE"; }
 zof() { awk -v a=$1 'BEGIN{printf "%.2f", 1/a-1}'; }
 # figure captions: series name + closest MEGATRON recipe (2026-11-23, PO request)
 stitle() { case $1 in
@@ -30,6 +32,7 @@ say "start (pid $$)"
 for loop in $(seq 1 1000); do
   args=""; todo=""
   for s in $SPEC; do
+    [ $(echo $args | wc -w) -ge 3 ] && break   # 2026-11-24: <= 3 snapshots per dashboard job (z <= 6 runs are heavier)
     n=${s%%:*}
     for a in $TARGETS; do
       { [ -f $ST/$n@$a.done ] || [ -f $ST/$n@$a.fail2 ]; } && continue
@@ -44,7 +47,7 @@ for loop in $(seq 1 1000); do
   done
   changed=""
   if [ -n "$args" ] && ! squeue -h -u $USER -n dash_fbw 2>/dev/null | grep -q .; then
-    j=$(sbatch --parsable -q debug -t 00:30:00 dash_fbw.sl $args 2>>$LOG)   # debug QOS since 2026-11-23 (auto_tsn done; batch queue stalled)
+    j=$(sbatch --parsable -q debug -t 01:00:00 dash_fbw.sl $args 2>>$LOG)   # debug QOS since 2026-11-23 (auto_tsn done; batch queue stalled)
     if [ -n "$j" ]; then
       say "dashboards job $j:$args"
       while squeue -h -j $j 2>/dev/null | grep -q .; do sleep 120; done

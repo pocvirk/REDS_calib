@@ -2,6 +2,25 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-24 (07:00): series A, M_max pair finished at z = 5; A 2x reionizes the box (x_HII 0.96)
+`comparisons/compare_fbw_A_z5.90`, `compare_fbw_B_z6.69` (10x added), `fbw_trend/fbtrend_a0.{130,145}.*`
+- **Final x_HII at z = 5 (volume / mass):** A 2x **0.96 / 0.88**, A 4x 0.41 / 0.43, A 10x 0.14, M_max 100 twin of A 4x
+  0.23 / 0.28. The h2 production runs with mechanical FB ended at 0.22-0.44 (thermal 0.96), so A 2x is the first
+  mechanical-FB run to reach near-overlap. Its x_HII(z) goes through Hoag+19, the lower part of Mason+18 / Davies+18 at
+  z ~ 7 (0.25) and rises to 0.62 at z = 5.9.
+- **Series A at z = 5.90 (nearest snapshot to z = 6):** M* 5.7e8 / 1.4e8 / 3.9e7 Msun, f_esc RT 0.12 / 0.27 / 0.48,
+  x_HII **0.62** / 0.23 / 0.10. Partial MEGATRON trend at both steps (slopes -0.57 / -0.45); more stars still win on x_HII.
+  2x UV LF on Bouwens+16 / Bouwens+14 from M_UV -13 to -18; SMHM ~0.3-0.5 dex above the extrapolated Behroozi+19 at 3e9-1e10
+  Msun (4x on it). 2x halo f_esc falls from ~0.5 at 1e8 to 0.05 at 1.3e10 Msun, the CoDa value at 1e10.
+- **Open issues for A 2x:** tau_e = 0.042, below Planck+18 (0.054 +- 0.007). **Gamma is low:** the x_HII > 0.99 mean is ~4e-14 s^-1 at
+  z = 5-6 (Gamma_V/x_V the same once the box is ionized), ~1-1.3 dex below the Calverley+11 / D'Aloisio+18 values.
+  The box is ionized, but the emissivity or mean free path is too low for the observed post-overlap UVB.
+- **Series B at z = 6.69 with 10x:** M* 4.4e8 / 1.1e8 / 4.6e7, f_esc 0.02 / 0.11 / 0.15, x_HII 0.044 / 0.035 / 0.040.
+  10x vs 5x is still a full step; 2x has the highest x_HII (partial step 5x vs 2x).
+- Watcher extended (PO request, 06:04): new targets a = 0.145 (z = 5.90) and a = 0.1667 (z = 5, run end; the watcher waits
+  for the chain's ALL DONE). At most 3 runs per dashboard job, 1 h debug. z = 5 dashboards for series A are running.
+- Series B at z ~ 5.4 / 5.5 / 6.1, production `h2_eps0.3_mech_n10_snx2_t10` at 5.9. No crashes.
+
 ## 2026-11-24 (01:00): FB campaign at z = 6.7; series B 10x at z = 8.1 and 7.3
 `comparisons/compare_fbw_A_z6.69`, `compare_fbw_B_z6.69`, `compare_fbw_B_z8.09` and `_z7.33` (10x added), `fbw_trend/fbtrend_a0.{110,120,130}.*`
 - **Series A 2x: x_HII 0.33 at z = 6.69** (curve ~0.37 at z = 6.6), near the lower edge of the z ~ 7 constraints
