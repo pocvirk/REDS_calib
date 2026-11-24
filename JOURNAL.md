@@ -2,6 +2,22 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-24 (19:00): series B 5x done at z = 5; node-scaling tests for the c_rad 0.1c run
+`comparisons/compare_fbw_B_z5.00` (2x and 5x; 10x at z = 5.04 will be added by the watcher), `fbw_trend/fbtrend_a0.167.*`
+- **Series B (bursty SF; closest MEGATRON recipe: bursty, also high eps; t_SNII 3) at z = 5:** 2x / 5x: M* 1.9e9 / 3.7e8 Msun,
+  f_esc RT 0.012 / 0.027, x_HII **0.116 / 0.091**. Partial step (f_esc anticorrelated with M*, slope -0.5), more stars win on
+  x_HII. B ends 8-10x below A 2x (0.96): bursty SF with high eps traps its photons (f_esc 1-3%) and no B run gets near overlap.
+- **Campaign summary so far:** the MEGATRON trend in full (stronger FB -> lower M* and higher x_HII) appears only in series B at
+  z >= 7.3 (10x vs 5x); at z <= 6.7 B is flat or partial. Series A shows only the partial trend at every z (2x > 4x > 10x in
+  x_HII). M_max 300 vs 100 gives 1.8-1.9x the x_HII at fixed M*.
+- **c_rad 0.1c run speed (fiducial follow-up):** this morning it ran ~30x faster on 8 nodes than on 1 node. Short tests from
+  its checkpoints (dyablo timer tables, `runs/reio_v2/nodescan/`) split this into (a) a real 1 -> 8 node gain of 5.4x over
+  iterations 400-500, driven by the chemistry (SourceUpdate 408 s -> 30 s, 14x: likely load imbalance of the stiff chemistry
+  around the first sources) and 2.5x over 500-538; and (b) a further ~3x slowdown of this morning's 1-node jobs that does not
+  reproduce now (cause unknown). GPU-aware MPI, OpenMP threads and the averages writer are not the cause; IPC on crashes.
+  The c_rad 0.01c fiducial is 2x faster on 8 nodes (4x more node-hours), so 1 node stays right for the c = 0.01c runs.
+- Production `h2_eps0.3_mech_n10_snx2_t10` at z = 5.03. No campaign crashes.
+
 ## 2026-11-24 (12:50): series B at z = 5.9 (FB strength no longer matters for x_HII); M_max pair at z = 5.9 / 5; fiducial follow-ups launched
 `comparisons/compare_fbw_B_z5.90`, `compare_fbw_M_z5.90`, `compare_fbw_M_z5.00`, `compare_fbw_A_z5.00`, `fbw_trend/fbtrend_a0.{145,167}.*`
 - **Series B (bursty SF; closest MEGATRON recipe: bursty, also high eps; t_SNII 3) at z = 5.90:** 2x / 5x / 10x:
