@@ -2,6 +2,26 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-24 (01:00): FB campaign at z = 6.7; series B 10x at z = 8.1 and 7.3
+`comparisons/compare_fbw_A_z6.69`, `compare_fbw_B_z6.69`, `compare_fbw_B_z8.09` and `_z7.33` (10x added), `fbw_trend/fbtrend_a0.{110,120,130}.*`
+- **Series A 2x: x_HII 0.33 at z = 6.69** (curve ~0.37 at z = 6.6), near the lower edge of the z ~ 7 constraints
+  (Mason+18, Davies+18). 2x / 4x / 10x: M* 3.0e8 / 8.6e7 / 2.9e7 Msun, f_esc RT 0.15 / 0.36 / 0.50, x_HII **0.334** /
+  0.130 / 0.086. Partial MEGATRON trend at both steps (f_esc anticorrelated with M*, slopes -0.31 / -0.68), too shallow
+  for x_HII: the ranking is 2x > 4x > 10x. 10x vs 4x was a full step at z = 8.1 (x 0.065 vs 0.054) and has reversed since.
+  2x UV LF follows Bouwens+16 (z = 6) from M_UV -13 to -16 (box too small beyond -17). Its SMHM is ~0.3 dex above the
+  extrapolated Behroozi+19 at 3-8e9 Msun (4x on it). Its halo f_esc falls from ~0.6 at 1e8 to 0.1 at 7e9 Msun.
+  Gamma (x_HII > 0.99 mean) ~5.6e-14 s^-1, flat since z = 7.5; Gamma_V/x_V 0.1 dex lower.
+- **Series B 10x keeps the full trend at z = 8.1 and 7.3.** At z = 8.1, 2x / 5x / 10x have M* 1.35e8 / 3.9e7 / 2.1e7,
+  f_esc RT 0.02 / 0.14 / 0.26 and x_HII 0.011 / 0.012 / **0.017**. At z = 7.3, M* 2.6e8 / 6.9e7 / 3.4e7, f_esc 0.03 /
+  0.06 / 0.20 and x_HII 0.015 / 0.023 / **0.029**. Both steps are full MEGATRON steps (slopes -0.6 to -1.6). The 10x
+  run has as many intrinsic photons as 5x with half the stars (bursty: young populations dominate).
+- **Series B at z = 6.69 (2x / 5x): the 2x run overtakes.** M* 4.4e8 / 1.1e8, f_esc 0.02 / 0.11, x_HII **0.044** /
+  0.035, so B 2x vs 5x has become a partial step (as in series A). B still ionizes 7-10x less than A 2x.
+  eps 0.3 builds ~1.5x more stars than A 2x, with an f_esc of 0.02.
+- Campaign runs now at z ~ 5.5-6.2 (B 10x at 7.0). All 8 chain jobs are running (started 23:36-23:40). No crashes.
+  Watcher alive; only B 10x at z = 6.69 is left, after which it exits (last target a = 0.130).
+  Production `h2_eps0.3_mech_n10_snx2_t10` at z ~ 6.4.
+
 ## 2026-11-23 (18:50): M_max pair at z = 6.7; t_SNII scan finished at z = 5
 `comparisons/compare_fbw_M_z6.69`, `comparisons/fbw_trend/fbtrend_a0.130.*`
 - M_max 300 vs 100 at z = 6.69: same M* (8.6e7 Msun), intrinsic photons +39%, f_esc 0.36 vs 0.27 (RT; M1 0.38 vs 0.28),
