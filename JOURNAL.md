@@ -2,6 +2,22 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-25 (12:50): radiative suppression test, c_rad 0.01c vs 0.1c (Ocvirk+16 SFR(Mh))
+`comparisons/fiducial_twins/crad_sfr_mh.png`, `crad_sfr_z.png`, `crad_sfr.txt` (mean SFR over the last 10 Myr of all halos in a
+Mh bin, from the dashboard; `runs/reio_v2/twins/sfr_mh.py`). Fiducial: smooth SF eps0.03 (n/n_th)^0.5, mech FB 2x SN, t_SNII 10 Myr,
+M_max 300 (closest MEGATRON recipe: smooth).
+- c consistency checked: every module reads `[rad] c_rad` (M1 transport, RT dt, Chem_Ramses chemistry in physical units,
+  AveragesLogger), so the photoionization / heating rates use the same reduced c as the transport. reion_accel only skips RT
+  before the first star.
+- The fiducial shows the Ocvirk+16 kink: from z = 10 to 5, <SFR> drops x2-3 at 1e9 Msun but x40-100 below ~10^8.3 Msun,
+  faster after z ~ 7 (x_HII > 0.3). Kink at lower mass than CoDa I/II (higher resolution, but different SF + SN FB recipe).
+- 0.1c vs 0.01c at z = 10.1 - 7.3: no kink difference yet. The SFR ratio scatters 0.65-1.25 between snapshots (run-to-run
+  noise); only the 10^7.5-8 bin is steadily lower (0.82-0.91). The earlier "stronger radiative feedback at 0.1c" reading
+  (15% fewer stars) is withdrawn: within noise, no mass trend. The real test is z <= 6.7 (0.1c run at z 6.65; added
+  automatically by `twins/crad_watch.sh`).
+- Status: all 4 follow-ups queued since 10:25 (Frontier: est. start 15:00). thermal z 5.35 (x_HII 0.95), constant eps z 5.72
+  (0.59), c_rad 0.1c z 6.65 (0.41), 8 cMpc/h z 7.42 (0.25). No crashes.
+
 ## 2026-11-25 (09:30): fiducial vs its 3 twins (thermal FB, constant eps, c_rad 0.1c), z = 8.09 - 5.90
 `comparisons/compare_twins_z{8.09,7.33,6.69,5.90}`, `comparisons/fiducial_twins/` (f_esc vs Mh / M* / M_UV, photon budget by Mh,
 UV LF z 6-8 with the new compilation). Fiducial: smooth SF eps0.03 (n/n_th)^0.5 <= 0.1, mech FB 2x SN, t_SNII 10 Myr, M_max 300,
