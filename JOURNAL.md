@@ -2,6 +2,20 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-25 (01:00): FB campaign complete (all 7 runs at z = 5); final series B comparison
+`comparisons/compare_fbw_B_z5.00` (now 2x / 5x / 10x), `fbw_trend/fbtrend_a0.167.*`
+- **Series B (bursty SF; closest MEGATRON recipe: bursty, also high eps; t_SNII 3) at z = 5:** 2x / 5x / 10x: M* 1.9e9 /
+  3.7e8 / 1.2e8 Msun, f_esc RT 0.012 / 0.027 / 0.124, x_HII **0.116 / 0.091 / 0.088**. f_esc keeps rising with FB, but not
+  enough to offset the lost stars: escaping rates 5.1 / 1.8 / 0.44e52 ph/s. Both steps are partial (more stars win on x_HII).
+- **Campaign result (final):** stronger FB always lowers M* and raises f_esc (both series, every z). The full MEGATRON trend
+  (x_HII also rising) appears only in series B at z >= 7.3 (10x vs 5x); by z = 5.9 B's FB strength is neutral for x_HII, and
+  at z = 5 it is reversed (weakly). Series A shows only the partial trend at every z (x_HII 0.96 / 0.41 / 0.14 for 2x / 4x /
+  10x at z = 5). In our 4 cMpc/h box, f_esc rises too slowly with FB (dlog f_esc / dlog M* -0.5 to -1.3, needs < -1 on both
+  estimates) for the MEGATRON trend to survive to the end of reionization. M_max 300 vs 100: 1.8-1.9x the x_HII at fixed M*.
+- Production `h2_eps0.3_mech_n10_snx2_t10` (t_SNII scan) done: x_HII 0.59 at z = 5.
+- Fiducial follow-ups (run index): thermal twin z ~ 7.7, constant eps z ~ 8.0, c_rad 0.1c (8 nodes) z ~ 8.4, 8 cMpc/h box z ~ 9.3.
+  No crashes.
+
 ## 2026-11-24 (19:00): series B 5x done at z = 5; node-scaling tests for the c_rad 0.1c run
 `comparisons/compare_fbw_B_z5.00` (2x and 5x; 10x at z = 5.04 will be added by the watcher), `fbw_trend/fbtrend_a0.167.*`
 - **Series B (bursty SF; closest MEGATRON recipe: bursty, also high eps; t_SNII 3) at z = 5:** 2x / 5x: M* 1.9e9 / 3.7e8 Msun,
