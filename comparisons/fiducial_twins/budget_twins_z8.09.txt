@@ -1,0 +1,38 @@
+== fiducial_eps0.03n0.5c0.1_mech_snx2_t10_ssp300_h2 z=8.0908 box 5.96 cMpc: 4991 halos, M* 8.913e+07 Msun, Ndot_int 2.850e+53, Ndot_esc(RT) 6.657e+52 ph/s; Ndot_int in halos with fesc_RT nan: 0.000
+   per (4 cMpc/h)^3: M* 8.913e+07, Ndot_esc 6.657e+52
+   log Mh bin  | n halos | M* share | Ndot_int share | Ndot_esc share | <fesc_RT> (N-weighted) | brightest M_UV
+    7.0- 7.5 |    2966 |    0.007 |          0.013 |          0.035 |    0.645 | -11.54
+    7.5- 8.0 |    1358 |    0.040 |          0.070 |          0.174 |    0.582 | -11.54
+    8.0- 8.5 |     516 |    0.166 |          0.146 |          0.219 |    0.351 | -12.08
+    8.5- 9.0 |     127 |    0.240 |          0.215 |          0.241 |    0.262 | -13.36
+    9.0- 9.5 |      22 |    0.380 |          0.345 |          0.253 |    0.171 | -15.30
+    9.5-10.0 |       2 |    0.167 |          0.212 |          0.079 |    0.087 | -16.41
+== eps0.03n0.5c0.1_thermal_snx2_t10_ssp300_h2 z=8.0908 box 5.96 cMpc: 4972 halos, M* 1.249e+08 Msun, Ndot_int 4.749e+53, Ndot_esc(RT) 8.837e+52 ph/s; Ndot_int in halos with fesc_RT nan: 0.000
+   per (4 cMpc/h)^3: M* 1.249e+08, Ndot_esc 8.837e+52
+   log Mh bin  | n halos | M* share | Ndot_int share | Ndot_esc share | <fesc_RT> (N-weighted) | brightest M_UV
+    7.0- 7.5 |    2938 |    0.004 |          0.001 |          0.003 |    0.424 | -10.69
+    7.5- 8.0 |    1352 |    0.030 |          0.037 |          0.103 |    0.518 | -12.04
+    8.0- 8.5 |     531 |    0.153 |          0.121 |          0.236 |    0.361 | -12.38
+    8.5- 9.0 |     128 |    0.229 |          0.196 |          0.292 |    0.277 | -13.42
+    9.0- 9.5 |      20 |    0.345 |          0.329 |          0.237 |    0.134 | -15.61
+    9.5-10.0 |       3 |    0.239 |          0.315 |          0.130 |    0.077 | -17.19
+== eps0.03const_mech_snx2_t10_ssp300_h2 z=8.0909 box 5.96 cMpc: 4961 halos, M* 1.031e+08 Msun, Ndot_int 3.739e+53, Ndot_esc(RT) 6.335e+52 ph/s; Ndot_int in halos with fesc_RT nan: 0.000
+   per (4 cMpc/h)^3: M* 1.031e+08, Ndot_esc 6.335e+52
+   log Mh bin  | n halos | M* share | Ndot_int share | Ndot_esc share | <fesc_RT> (N-weighted) | brightest M_UV
+    7.0- 7.5 |    2935 |    0.004 |          0.002 |          0.008 |    0.578 | -10.96
+    7.5- 8.0 |    1347 |    0.032 |          0.048 |          0.144 |    0.509 | -12.00
+    8.0- 8.5 |     532 |    0.152 |          0.128 |          0.290 |    0.385 | -12.74
+    8.5- 9.0 |     123 |    0.217 |          0.177 |          0.261 |    0.250 | -13.04
+    9.0- 9.5 |      21 |    0.345 |          0.292 |          0.204 |    0.118 | -15.63
+    9.5-10.0 |       3 |    0.250 |          0.353 |          0.094 |    0.045 | -17.20
+== eps0.03n0.5c0.1_mech_snx2_t10_ssp300_h2_crad0.1 z=8.0909 box 5.96 cMpc: 4902 halos, M* 7.275e+07 Msun, Ndot_int 2.737e+53, Ndot_esc(RT) 7.434e+52 ph/s; Ndot_int in halos with fesc_RT nan: 0.000
+   per (4 cMpc/h)^3: M* 7.275e+07, Ndot_esc 7.434e+52
+   log Mh bin  | n halos | M* share | Ndot_int share | Ndot_esc share | <fesc_RT> (N-weighted) | brightest M_UV
+    7.0- 7.5 |    2942 |    0.009 |          0.016 |          0.044 |    0.729 | -11.42
+    7.5- 8.0 |    1298 |    0.044 |          0.070 |          0.147 |    0.574 | -11.70
+    8.0- 8.5 |     529 |    0.192 |          0.159 |          0.276 |    0.473 | -12.15
+    8.5- 9.0 |     111 |    0.247 |          0.190 |          0.274 |    0.392 | -12.98
+    9.0- 9.5 |      20 |    0.355 |          0.314 |          0.211 |    0.183 | -14.75
+    9.5-10.0 |       2 |    0.152 |          0.252 |          0.048 |    0.052 | -16.36
+wrote /lustre/orion/ast031/proj-shared/pocvirk/CoDaIII/prod_sr/pocvirk/dyablo/28102026/runs/reio_v2/twins/budget_twins_z8.09.png
+wrote /lustre/orion/ast031/proj-shared/pocvirk/CoDaIII/prod_sr/pocvirk/dyablo/28102026/runs/reio_v2/twins/budget_twins_z8.09_fesc.png

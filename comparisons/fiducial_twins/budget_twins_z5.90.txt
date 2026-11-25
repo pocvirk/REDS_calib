@@ -1,0 +1,22 @@
+== fiducial_eps0.03n0.5c0.1_mech_snx2_t10_ssp300_h2 z=5.8965 box 5.96 cMpc: 7619 halos, M* 5.702e+08 Msun, Ndot_int 1.124e+54, Ndot_esc(RT) 1.345e+53 ph/s; Ndot_int in halos with fesc_RT nan: 0.000
+   per (4 cMpc/h)^3: M* 5.702e+08, Ndot_esc 1.345e+53
+   log Mh bin  | n halos | M* share | Ndot_int share | Ndot_esc share | <fesc_RT> (N-weighted) | brightest M_UV
+    7.0- 7.5 |    4291 |    0.002 |          0.000 |          0.001 |    0.236 | -10.03
+    7.5- 8.0 |    2136 |    0.005 |          0.005 |          0.020 |    0.525 | -11.43
+    8.0- 8.5 |     823 |    0.034 |          0.036 |          0.134 |    0.439 | -11.83
+    8.5- 9.0 |     266 |    0.092 |          0.086 |          0.160 |    0.223 | -13.47
+    9.0- 9.5 |      79 |    0.147 |          0.155 |          0.212 |    0.163 | -14.48
+    9.5-10.0 |      21 |    0.445 |          0.437 |          0.369 |    0.101 | -17.41
+   10.0-10.5 |       3 |    0.274 |          0.281 |          0.106 |    0.045 | -17.80
+== eps0.03n0.5c0.1_thermal_snx2_t10_ssp300_h2 z=5.8965 box 5.96 cMpc: 7572 halos, M* 7.618e+08 Msun, Ndot_int 1.457e+54, Ndot_esc(RT) 1.379e+53 ph/s; Ndot_int in halos with fesc_RT nan: 0.000
+   per (4 cMpc/h)^3: M* 7.618e+08, Ndot_esc 1.379e+53
+   log Mh bin  | n halos | M* share | Ndot_int share | Ndot_esc share | <fesc_RT> (N-weighted) | brightest M_UV
+    7.0- 7.5 |    4288 |    0.001 |          0.001 |          0.006 |    0.528 | -11.48
+    7.5- 8.0 |    2082 |    0.004 |          0.004 |          0.020 |    0.462 | -11.55
+    8.0- 8.5 |     833 |    0.033 |          0.025 |          0.103 |    0.392 | -11.91
+    8.5- 9.0 |     265 |    0.089 |          0.072 |          0.163 |    0.213 | -13.50
+    9.0- 9.5 |      81 |    0.168 |          0.174 |          0.254 |    0.138 | -15.23
+    9.5-10.0 |      20 |    0.447 |          0.503 |          0.341 |    0.064 | -17.49
+   10.0-10.5 |       3 |    0.257 |          0.220 |          0.115 |    0.049 | -17.66
+wrote /lustre/orion/ast031/proj-shared/pocvirk/CoDaIII/prod_sr/pocvirk/dyablo/28102026/runs/reio_v2/twins/budget_twins_z5.90.png
+wrote /lustre/orion/ast031/proj-shared/pocvirk/CoDaIII/prod_sr/pocvirk/dyablo/28102026/runs/reio_v2/twins/budget_twins_z5.90_fesc.png

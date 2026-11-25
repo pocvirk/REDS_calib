@@ -27,6 +27,9 @@ done
 # FB-strength campaign trend tables (runs/reio_v2/fbtrend.py via auto_fbw.sh)
 [ -d $V/fbw_trend ] && { cp_png $V/fbw_trend $H/comparisons/fbw_trend; cp -u $V/fbw_trend/*.txt $H/comparisons/fbw_trend/ 2>/dev/null || true; }
 
+# fiducial vs twins (thermal FB, constant eps, c_rad 0.1c): f_esc budget by Mh + UV LF (runs/reio_v2/twins/twins_dash.sh), 2026-11-25
+[ -d $V/twins ] && { cp_png $V/twins $H/comparisons/fiducial_twins; cp -u $V/twins/budget_twins_*.txt $H/comparisons/fiducial_twins/ 2>/dev/null || true; }
+
 # halo maps
 cp_png $V/porosity_z9 $H/maps/porosity_z9; cp -u $V/porosity_z9/halo_porosity_summary.txt $H/maps/porosity_z9/ 2>/dev/null || true
 

@@ -2,6 +2,30 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-25 (09:30): fiducial vs its 3 twins (thermal FB, constant eps, c_rad 0.1c), z = 8.09 - 5.90
+`comparisons/compare_twins_z{8.09,7.33,6.69,5.90}`, `comparisons/fiducial_twins/` (f_esc vs Mh / M* / M_UV, photon budget by Mh,
+UV LF z 6-8 with the new compilation). Fiducial: smooth SF eps0.03 (n/n_th)^0.5 <= 0.1, mech FB 2x SN, t_SNII 10 Myr, M_max 300,
+c_rad 0.01c (closest MEGATRON recipe: smooth). 4 cMpc/h; each twin changes one thing.
+
+| z = 7.33 | M* [Msun] | f_esc RT (global) | f_esc RT, Mh 10^9.5-10 | x_HII |
+|---|---|---|---|---|
+| fiducial `eps0.03n0.5c0.1_mech_snx2_t10` | 1.60e8 | 0.19 | 0.095 | 0.20 |
+| thermal FB `eps0.03n0.5c0.1_thermal_snx2_t10` | 2.27e8 | 0.15 | 0.080 | 0.27 |
+| constant eps `eps0.03_mech_snx2_t10` | 1.90e8 | 0.12 | **0.041** | 0.18 |
+| c_rad 0.1c `eps0.03n0.5c0.1_mech_snx2_t10_crad0.1` | 1.36e8 | 0.21 | 0.116 | 0.22 |
+
+- **Thermal FB:** 1.3-1.45x the stars at every z, f_esc 10-20% lower; x_HII ahead by ~0.1 (more stars win). Same f_esc(Mh)
+  shape. Mechanical FB does real work in limiting SF.
+- **Constant eps (no sqrt(n) boost):** 1.15-1.25x the stars, global f_esc 0.6-0.7x, x_HII behind by 0.03-0.08. The f_esc(Mh)
+  slope is **steeper**: f_esc(10^9.5-10) 0.045 / 0.041 / 0.050 at z 8.09 / 7.33 / 6.69 (fiducial 0.087 / 0.095 / 0.107),
+  0.034 at 10^10-10.5 (z 6.69). This is the CoDa direction at the massive end (f_esc(1e10) ~ 0.02-0.05), but f_esc(1e9) also drops
+  (0.12-0.13 vs 0.17-0.18; target ~ 0.5). The sqrt(n) term helps massive halos leak (SF concentrated in the densest clumps).
+- **c_rad 0.1c (reion_accel on):** 0.8-0.85x the stars, global f_esc 1.1-1.15x, x_HII about the same or slightly ahead. With
+  0.01c the fiducial overstates M* by ~15% and understates f_esc by ~10%: worth keeping in mind for the 8 cMpc/h recipe.
+- UV LF: all four within errors of each other at z ~ 6-8; same faint-end deficit against the lensed points. Gamma: indistinguishable.
+- None of the twins fixes the flat f_esc(Mh). Constant eps is the only step in the right direction at high mass.
+- Status: thermal twin z 5.6 (x_HII 0.85), constant eps z 6.0 (0.48), c_rad 0.1c z 6.9 (0.31), 8 cMpc/h z 7.7 (0.20). No crashes.
+
 ## 2026-11-25 (06:45): box size: the 4 cMpc/h calibration does not hold in 8 cMpc/h
 `comparisons/compare_box_z8.52`, `comparisons/box_size_4_vs_8mpc/` (fiducial reio model: smooth SF eps0.03 (n/n_th)^0.5, mech FB
 2x SN, t_SNII 10 Myr, M_max 300; closest MEGATRON recipe: smooth)
