@@ -2,6 +2,23 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-25 (06:45): box size: the 4 cMpc/h calibration does not hold in 8 cMpc/h
+`comparisons/compare_box_z8.52`, `comparisons/box_size_4_vs_8mpc/` (fiducial reio model: smooth SF eps0.03 (n/n_th)^0.5, mech FB
+2x SN, t_SNII 10 Myr, M_max 300; closest MEGATRON recipe: smooth)
+- Same physics, same resolution, 4 vs 8 cMpc/h (no setup difference besides box size, levels and seed). Identical to z ~ 12, then
+  the 8 cMpc/h box pulls ahead: stars per volume x2.8, photon rate x3.2, x_HII x1.36 at z = 8.4.
+- The 4 cMpc/h box is a median region: in 4 cMpc/h octants of the 8 cMpc/h box the stellar mass ranges 0.3-13x the 4 cMpc/h box
+  (median 0.8); the 2 octants with +27% DM hold 81% of the stars (9 halos > 1e10 Msun, none in the 4 cMpc/h box).
+- f_esc(Mh) is the same in both boxes (per-halo physics converged): ~0.5 at 1e8, 0.25 at 1e9, 0.09 at 1e10 Msun. Too flat compared
+  with the CoDa target (f_esc(1e9) ~ 0.5, f_esc(1e10) ~ 0.02-0.05). In 8 cMpc/h the 9 halos > 1e10 give 32% of the escaping
+  photons (4 cMpc/h: 0%).
+- UV LF (new JWST + HST + lensed compilation, 265 points incl. Atek+26 GLIMPSE z~7, Bouwens+22 HFF): at z = 8.09 the 8 cMpc/h box
+  matches the bright end within errors (to M_UV -19.3); the faint end (-12 to -15) is 3-10x below the lensed z~8 points in both
+  boxes. Bright-end excess expected to grow by z ~ 7-6 (watched automatically).
+- Conclusion (PO): calibration boxes must be 8 cMpc/h; 4 cMpc/h does not show what the sub-grid model does to massive halos.
+  Next: a recipe with bursty SF in small halos and smooth, inefficient SF in big ones (options under discussion).
+- Follow-ups: thermal twin z 6.0 (x_HII 0.72), constant eps z 6.4 (0.37), c_rad 0.1c z 7.25 (0.24), 8 cMpc/h z 7.95 (0.17). No crashes.
+
 ## 2026-11-25 (01:00): FB campaign complete (all 7 runs at z = 5); final series B comparison
 `comparisons/compare_fbw_B_z5.00` (now 2x / 5x / 10x), `fbw_trend/fbtrend_a0.167.*`
 - **Series B (bursty SF; closest MEGATRON recipe: bursty, also high eps; t_SNII 3) at z = 5:** 2x / 5x / 10x: M* 1.9e9 /

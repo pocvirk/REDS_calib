@@ -1,0 +1,30 @@
+== 4Mpc_mech_snx2_t10 z=8.5238 box 5.96 cMpc: 4471 halos, M* 6.584e+07 Msun, Ndot_int 2.313e+53, Ndot_esc(RT) 6.337e+52 ph/s; Ndot_int in halos with fesc_RT nan: 0.000
+   per (4 cMpc/h)^3: M* 6.584e+07, Ndot_esc 6.337e+52
+   log Mh bin  | n halos | M* share | Ndot_int share | Ndot_esc share | <fesc_RT> (N-weighted) | brightest M_UV
+    7.0- 7.5 |    2643 |    0.010 |          0.008 |          0.023 |    0.742 | -11.23
+    7.5- 8.0 |    1230 |    0.050 |          0.076 |          0.168 |    0.609 | -12.02
+    8.0- 8.5 |     478 |    0.206 |          0.207 |          0.288 |    0.380 | -12.15
+    8.5- 9.0 |     103 |    0.274 |          0.215 |          0.222 |    0.283 | -13.14
+    9.0- 9.5 |      16 |    0.359 |          0.359 |          0.260 |    0.198 | -14.86
+    9.5-10.0 |       1 |    0.101 |          0.134 |          0.040 |    0.082 | -15.90
+== 8Mpc_mech_snx2_t10 z=8.5238 box 11.92 cMpc: 33753 halos, M* 1.509e+09 Msun, Ndot_int 5.849e+54, Ndot_esc(RT) 8.088e+53 ph/s; Ndot_int in halos with fesc_RT nan: 0.000
+   per (4 cMpc/h)^3: M* 1.887e+08, Ndot_esc 1.011e+53
+   log Mh bin  | n halos | M* share | Ndot_int share | Ndot_esc share | <fesc_RT> (N-weighted) | brightest M_UV
+    7.0- 7.5 |   20638 |    0.004 |          0.005 |          0.021 |    0.545 | -12.32
+    7.5- 8.0 |    8981 |    0.011 |          0.016 |          0.061 |    0.522 | -12.07
+    8.0- 8.5 |    3129 |    0.052 |          0.055 |          0.147 |    0.370 | -12.67
+    8.5- 9.0 |     778 |    0.102 |          0.090 |          0.155 |    0.239 | -13.84
+    9.0- 9.5 |     186 |    0.153 |          0.158 |          0.169 |    0.148 | -15.59
+    9.5-10.0 |      32 |    0.167 |          0.165 |          0.130 |    0.109 | -17.16
+   10.0-10.5 |       9 |    0.511 |          0.510 |          0.316 |    0.086 | -19.46
+   octant: share of M*, Ndot_esc; max Mh; N halos > 1e10
+     0: 0.013 0.027 1.77e+09 0
+     1: 0.022 0.038 2.74e+09 0
+     2: 0.059 0.061 6.46e+09 0
+     3: 0.030 0.051 3.79e+09 0
+     4: 0.020 0.039 2.33e+09 0
+     5: 0.212 0.239 1.40e+10 2
+     6: 0.040 0.062 4.08e+09 0
+     7: 0.605 0.483 1.80e+10 7
+wrote /lustre/orion/ast031/proj-shared/pocvirk/CoDaIII/prod_sr/pocvirk/dyablo/28102026/runs/reio_v2/boxsize/budget_mh_z8.52.png
+wrote /lustre/orion/ast031/proj-shared/pocvirk/CoDaIII/prod_sr/pocvirk/dyablo/28102026/runs/reio_v2/boxsize/budget_mh_z8.52_fesc.png
