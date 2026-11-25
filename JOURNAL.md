@@ -2,6 +2,18 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-25 (18:50): c_rad 0.1c at z = 6.69; 8 cMpc/h UV LF at z = 7.33
+`comparisons/fiducial_twins/crad_sfr_*.png`, `comparisons/compare_twins_z6.69` (now 4 runs incl. c_rad 0.1c),
+`comparisons/box_size_4_vs_8mpc/uvlf_boxC_z8.52_8.09_7.33.png`. Fiducial: smooth SF eps0.03 (n/n_th)^0.5, mech FB 2x SN,
+t_SNII 10 Myr, M_max 300 (closest MEGATRON recipe: smooth).
+- c_rad 0.1c vs 0.01c at z = 6.69 (box x_HII ~ 0.35-0.4): SFR(Mh) identical from 10^7.1 to 10^9.9 Msun; the 10^7.5-8 bin
+  (0.82-0.91 before) is now 1.10. No radiative-suppression difference between the two c values so far.
+- 8 cMpc/h UV LF at z = 7.33: reaches M_UV ~ -19.3; 1.5-2x above Bouwens+21/22 and Harikane+25 at -17 to -19 (edge of the
+  Poisson band, few objects per bin); faint end (-13 to -16) in line with the Bouwens+22 lensed points, Atek+26 GLIMPSE ~3x
+  higher at -13 to -14. Bright-end excess growing slowly since z = 8.09.
+- Status: all 4 follow-ups queued since 15:47 (Frontier: est. start 19:30). thermal z 5.09 (x_HII 0.995), constant eps z 5.41
+  (0.71), c_rad 0.1c z 6.28 (0.57), 8 cMpc/h z 7.20 (0.28). No crashes.
+
 ## 2026-11-25 (12:50): radiative suppression test, c_rad 0.01c vs 0.1c (Ocvirk+16 SFR(Mh))
 `comparisons/fiducial_twins/crad_sfr_mh.png`, `crad_sfr_z.png`, `crad_sfr.txt` (mean SFR over the last 10 Myr of all halos in a
 Mh bin, from the dashboard; `runs/reio_v2/twins/sfr_mh.py`). Fiducial: smooth SF eps0.03 (n/n_th)^0.5, mech FB 2x SN, t_SNII 10 Myr,
