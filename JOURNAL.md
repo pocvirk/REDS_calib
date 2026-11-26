@@ -483,3 +483,8 @@ c_rad 0.01c (closest MEGATRON recipe: smooth). 4 cMpc/h; each twin changes one t
 - Reionization: 0.1c ends at z ~ 5.3 (x_HI 2e-4 at z = 5, near Fan+06), 0.01c not finished (x_HI 0.04 at z = 5); tau_e 0.045 vs 0.042; Gamma(z = 5) -12.8 vs -13.4 (data -12.2 to -12.5).
 - 0.1c forms 15-20% fewer stars at all z (CSFRD ~0.1 dex lower already at z > 10, i.e. not a post-reionization effect); global f_esc(RT) higher: 0.21/0.17/0.135/0.083 vs 0.19/0.15/0.12/0.061 at z 7.33/6.69/5.90/5.00; f_esc(Mh) shape unchanged.
 - No mass-specific extra suppression (SFR ratio 0.1c/0.01c scatters 0.6-1.5 per bin, no kink).
+
+## 2026-11-26 (10:05): why 0.1c has a higher f_esc than 0.01c (`comparisons/crad_0.01c_vs_0.1c/fesc_age/`)
+- Per-star ray-traced f_esc (dashboard rays): the gain (+0.015 to +0.023 in global f_esc) comes from stars < 3 Myr (all of it at z 6.69-5.90; 83% at z = 5); 3-10 Myr and older stars: no gain or slightly lower. Biggest in the 0-1 Myr bin: 0.09 -> 0.15 (z 6.69), 0.08 -> 0.135 (5.90), 0.046 -> 0.075 (5.00); small halos (log Mh 7-8.5) 0.13-0.21 -> 0.32-0.49 at 0-1 Myr.
+- Gas around < 5 Myr stars: no density/ionization difference within 3 pkpc in halos < 10^9.5; in halos > 10^9.5, 0.1c has 10-30% lower n_H (z <= 5.9) and its ionized region extends further (x_HI jump at 0.4-0.5 vs 0.25-0.3 pkpc; fraction with x_HI(<0.3 pkpc) < 0.1: 0.86 vs 0.75 at z 5.9, 0.74 vs 0.56 at z 5).
+- Reading: reduced c delays I-front breakout of newborn clusters (front lag, ~1 Myr to cross R200 at 0.01c); in massive halos plus somewhat lower gas densities (stronger early radiative feedback) and, at z = 5, the higher UVB.
