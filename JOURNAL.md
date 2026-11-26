@@ -472,3 +472,8 @@ c_rad 0.01c (closest MEGATRON recipe: smooth). 4 cMpc/h; each twin changes one t
   Tep-style entropy switch (eta 0.1) kill shock heating in moving frames (Galilean pancake) and leave < 1e8 Msun halos
   cold. Production recipe: RK2 + minmod, no dual-energy switch, e_int-conserving remap, RAMSES-like refinement,
   smallp 1e-50, Compton cooling, adiabat fallback for negative pressure -> passes all 4 tests (`h2_` runs).
+
+## 2026-11-26 (11:30): boxC halo stamp maps (morphology, multiplicity, size estimators)
+- `comparisons/boxC_lf_postproc/halo_maps/` (script `halo_maps.py`): log Mh 9.5 -> max at z = 6.29 and 6.69, columns intrinsic | PSF no noise | JADES noisy | JADES segmentation | GLIMPSE mu=20 noisy | segmentation, all radii overlaid.
+- JADES: nothing detected below log Mh ~10.2 (M_UV > -17.7, diffuse light at mu 27-30 vs 1 sigma/pix 26.6 mag/arcsec^2); at log Mh 10.5-10.8 only the central clump survives (f_det 0.5-0.7, 7-11 segments, r_np,obs 0.1-0.5 pkpc vs intrinsic r_1/2 1.2-1.8 pkpc).
+- GLIMPSE mu=20 recovers 75-94% of the light but splits it into 6-32 segments; r_np,obs 0.6-1.4 pkpc at log Mh >= 10.2.

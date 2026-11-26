@@ -206,4 +206,5 @@ def main():
     print(f"  wrote {A.out}_cat.npz ({len(cat.label)} sources), {A.out}_halos.txt ({len(rows)} halos >= {MH_MATCH:.1e}) "
           f"in {time.time() - t0:.0f} s", flush=True)
 
-main()
+if __name__ == "__main__":
+    main()

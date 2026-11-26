@@ -36,6 +36,7 @@ done
 if [ -d $V/boxsize/lfpp ]; then L=$H/comparisons/boxC_lf_postproc; mkdir -p $L/scripts
   cp_png $V/boxsize/lfpp $L; cp -u $V/boxsize/lfpp/boxC_lfpp.txt $L/ 2>/dev/null || true
   cp_png $V/boxsize/lfpp/mock $L/mock_photometry; cp -u $V/boxsize/lfpp/mock/boxC_mock*.txt $L/mock_photometry/ 2>/dev/null || true
+  cp_png $V/boxsize/lfpp/maps $L/halo_maps
   cp -u $V/boxsize/lfpp/*.py $V/boxsize/lfpp/mock/run_iter.sh $L/scripts/ 2>/dev/null || true
 fi
 
