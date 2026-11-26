@@ -85,7 +85,7 @@ fixed recipe, see `JOURNAL.md`).
 `<SF>_<FB: th|mech|dc>[_snx<k>]_t<t_SNII>[_<hydro>]`, e.g. `eps0.3_mech_n10_snx2_t3_h2`. Older comparison sets
 (`compare_z7.7`, `compare_z8.09`, `compare_codalike_z9`, `ramses_box_*`) use run names as labels.
 
-## Run index (status 2026-11-26, 00:50 EST)
+## Run index (status 2026-11-26, 06:50 EST)
 
 | run | hydro | SF | FB | status / role |
 |---|---|---|---|---|
@@ -109,9 +109,9 @@ fixed recipe, see `JOURNAL.md`).
 | `h2_eps0.03n0.5c0.1_mech_snx2_ssp300`, `_snx10_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x / 10x SN, t10, M_max 300 | FB campaign series A; **done (z = 5), x_HII 0.96 (2x) / 0.14 (10x)** (4x: 0.41); 2x is the **fiducial model** since 2026-11-24; `compare_fbw_A_z10.11`, `_z9.00`, `_z8.09`, `_z7.33`, `_z6.69`, `_z5.90`, `_z5.00` |
 | `h2_eps0.3_mech_n10_snx{2,5,10}_t3_ssp300` | **h2** | 0.3, n_th 10 | mech, 2x / 5x / 10x SN, t3, M_max 300 | FB campaign series B; **done (z = 5), x_HII 0.116 / 0.091 / 0.088**; `compare_fbw_B_z10.11`, `_z9.00`, `_z8.09`, `_z7.33`, `_z6.69`, `_z5.90`, `_z5.00` |
 | `h2_eps0.03n0.5c0.1_snx2_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | **thermal**, 2x SN, t10, M_max 300 | fiducial follow-up: FB type (thermal twin of the fiducial); **done** (z = 5, x_HII 0.998); 1.4x the stars, f_esc 0.15 vs 0.19 at z 7.33, see `comparisons/fiducial_twins/` |
-| `h2_eps0.03_mech_snx2_ssp300` | **h2** | **0.03 const** | mech, 2x SN, t10, M_max 300 | fiducial follow-up: is sqrt(n) SF needed?; running (z ~ 5.01); steeper f_esc(Mh) (0.04 at 4e9 Msun vs 0.10), see `comparisons/fiducial_twins/` |
-| `h2_eps0.03n0.5c0.1_mech_snx2_ssp300_crad0.1` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10, M_max 300 | fiducial follow-up: **c_rad 0.1 c** from the ICs (reion_accel on); 8 nodes since 2026-11-24 13:00; running (z ~ 5.8); 0.85x the stars, f_esc 0.21 vs 0.19 at z 7.33 |
-| `boxC_h2_eps0.03n0.5c0.1_mech_snx2_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10, M_max 300 | fiducial follow-up: **8 cMpc/h box** (512^3, levels 7-11, same resolution), 8 nodes; running (z ~ 6.9); 2.8x the stars per volume of the 4 cMpc/h fiducial at z 8.4, see `comparisons/box_size_4_vs_8mpc/` |
+| `h2_eps0.03_mech_snx2_ssp300` | **h2** | **0.03 const** | mech, 2x SN, t10, M_max 300 | fiducial follow-up: is sqrt(n) SF needed?; **done** (z = 5, x_HII 0.88); steeper f_esc(Mh) (0.035 at 10^9.5-10 Msun vs 0.091 at z = 5), global f_esc 0.039 vs 0.061, see `comparisons/fiducial_twins/`, `comparisons/compare_twins_z5.00` |
+| `h2_eps0.03n0.5c0.1_mech_snx2_ssp300_crad0.1` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10, M_max 300 | fiducial follow-up: **c_rad 0.1 c** from the ICs (reion_accel on); 8 nodes since 2026-11-24 13:00; running (z ~ 5.04, x_HII 1.00); 0.85x the stars, f_esc 0.21 vs 0.19 at z 7.33 |
+| `boxC_h2_eps0.03n0.5c0.1_mech_snx2_ssp300` | **h2** | 0.03 (n/n_th)^0.5 <= 0.1 | mech, 2x SN, t10, M_max 300 | fiducial follow-up: **8 cMpc/h box** (512^3, levels 7-11, same resolution), 8 nodes; running (z ~ 6.1); 2.8x the stars per volume of the 4 cMpc/h fiducial at z 8.4, see `comparisons/box_size_4_vs_8mpc/`; bright-end UV LF excess explained by JWST-like detection (`comparisons/boxC_lf_postproc/`) |
 
 ## Updating
 

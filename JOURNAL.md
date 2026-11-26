@@ -2,6 +2,33 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-26 (06:50): z = 5 twins; 8 cMpc/h bright-end UV LF excess = detection effect (mock JWST photometry)
+`comparisons/compare_twins_z5.00`, `comparisons/fiducial_twins/budget_twins_z5.00*`, `comparisons/boxC_lf_postproc/` (+ `mock_photometry/`,
+`scripts/`). Fiducial: smooth SF eps0.03 (n/n_th)^0.5, mech FB 2x SN, t_SNII 10 Myr, M_max 300 (closest MEGATRON recipe: smooth).
+All post-processing; nothing changed in dyablo.
+- **z = 5 twins** (fiducial / thermal / constant eps): x_HII 0.96 / 0.998 / 0.88; M* 1.38e9 / 2.11e9 / 1.80e9 Msun; global f_esc 0.061 /
+  0.061 / 0.039; f_esc at Mh 10^9.5-10: 0.091 / 0.067 / 0.035. Thermal: 50% more stars, same global f_esc. Constant eps: steepest
+  f_esc(Mh) (x10 from 10^8 to 10^10; high-mass end in the CoDa target range) but f_esc(1e9) ~ 0.1 vs target 0.5 -> latest reionization.
+- **8 cMpc/h UV LF at z 6.69** (and 6.29, 7.33): intrinsic LF 2-3x above the data at M_UV -17.5 to -19.5 (our bright end).
+  - Not a halo excess: FoF (b = 0.15) halo counts = 0.9-1.1x Tinker08 at 1e9-3e10 Msun.
+  - Metallicity: negligible. Z = 0.001 -> 0.02 dims by 0.17-0.23 mag; JWST MZRs (Curti+24, Nakajima+23, Chemerynska+24) give
+    Z ~ 0.001-0.003, i.e. our baseline (+-0.04 mag).
+  - Dust laws: too weak. Park+26 (CoDa III, Ocvirk+25 calibration) acts only at M_UV < -21; Meurer+99 + Bouwens+14 beta(M_UV) gives
+    0.27 mag at < -18; Casey+26 A_UV(M*, z) <= 0.14 mag. Needed: 0.6-0.8 mag at M* ~ 1e8, where z > 6 galaxies are nearly dust-free.
+  - UV light is extended: r_half ~ 1-3 pkpc (all R200 stars, ~10 dx_min, resolved), light-weighted ages 5-8 Myr; a 1 pkpc aperture
+    dims by 1.5-1.9 mag.
+  - **Mock NIRCam photometry** (full-box 0.03" images, Moffat PSF, white noise at CEERS / JADES / GLIMPSE depth + GLIMPSE lensed
+    mu 5 / 20, photutils detection, deblending, Kron photometry, S/N_ap > 5, false sources subtracted): bright galaxies keep 45-90%
+    of their light above the isophote, split into 3-15 sources, main source 0.3-0.7 mag fainter than the true total. The detected LF
+    brighter than -18 sits on the data at z 6.29, 6.69, 7.33; lensed GLIMPSE (mu 20) tracks the lensed data down to -14.5.
+  - Sizes: detected cores 0.4-0.8 pkpc at -18 to -19 (upper half of the Kawamata+18 band, 2x Yang+22). Non-parametric sizes
+    (Curtis-Lake+16 / Varadaraj+24 method, 5 sigma pixels): 0.17-0.30 pkpc at JADES depth = on Kawamata+18 / Yang+22, rising
+    x3-4 to the deepest variant. Intrinsic sizes ~3x too large, as in THESAN (Shen+24); a JWST-like SB cut also brings THESAN-ZOOM
+    (McClymont+25) to within 0.1-0.2 dex of the data.
+  - Conclusion: the bright-end LF excess and the large sizes are largely what JWST would not see (diffuse light below the isophote).
+    No LF-based reason to retune SF / FB; f_esc(Mh) remains the open problem.
+- Status: c_rad 0.1c z 5.04 (x_HII 1.00, ending), 8 cMpc/h z 6.14 (0.55). FB campaign (7 runs) unchanged, all done. No crashes.
+
 ## 2026-11-26 (00:50): c_rad 0.1c at z = 5.90; thermal twin done at z = 5
 `comparisons/fiducial_twins/crad_sfr_*.png`, `comparisons/compare_twins_z5.90` (fiducial, thermal, c_rad 0.1c). Fiducial: smooth SF
 eps0.03 (n/n_th)^0.5, mech FB 2x SN, t_SNII 10 Myr, M_max 300 (closest MEGATRON recipe: smooth).

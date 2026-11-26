@@ -30,6 +30,15 @@ done
 # fiducial vs twins (thermal FB, constant eps, c_rad 0.1c): f_esc budget by Mh + UV LF (runs/reio_v2/twins/twins_dash.sh), 2026-11-25
 [ -d $V/twins ] && { cp_png $V/twins $H/comparisons/fiducial_twins; cp -u $V/twins/budget_twins_*.txt $H/comparisons/fiducial_twins/ 2>/dev/null || true; }
 
+# boxC (8 cMpc/h) UV LF: latest LF figure; LF post-processing (aperture / metallicity / dust) and mock JWST photometry
+# (runs/reio_v2/boxsize/lfpp: extract.py, lfpp.py, mock_phot.py, mock_plots.py, mock_simcomp.py), 2026-11-26
+[ -f $V/boxsize/uvlf_boxC_latest.png ] && { mkdir -p $H/comparisons/box_size_4_vs_8mpc; cp -u $V/boxsize/uvlf_boxC_latest.png $H/comparisons/box_size_4_vs_8mpc/; }
+if [ -d $V/boxsize/lfpp ]; then L=$H/comparisons/boxC_lf_postproc; mkdir -p $L/scripts
+  cp_png $V/boxsize/lfpp $L; cp -u $V/boxsize/lfpp/boxC_lfpp.txt $L/ 2>/dev/null || true
+  cp_png $V/boxsize/lfpp/mock $L/mock_photometry; cp -u $V/boxsize/lfpp/mock/boxC_mock*.txt $L/mock_photometry/ 2>/dev/null || true
+  cp -u $V/boxsize/lfpp/*.py $V/boxsize/lfpp/mock/run_iter.sh $L/scripts/ 2>/dev/null || true
+fi
+
 # halo maps
 cp_png $V/porosity_z9 $H/maps/porosity_z9; cp -u $V/porosity_z9/halo_porosity_summary.txt $H/maps/porosity_z9/ 2>/dev/null || true
 
