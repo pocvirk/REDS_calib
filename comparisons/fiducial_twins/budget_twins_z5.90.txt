@@ -18,5 +18,15 @@
     9.0- 9.5 |      81 |    0.168 |          0.174 |          0.254 |    0.138 | -15.23
     9.5-10.0 |      20 |    0.447 |          0.503 |          0.341 |    0.064 | -17.49
    10.0-10.5 |       3 |    0.257 |          0.220 |          0.115 |    0.049 | -17.66
+== eps0.03n0.5c0.1_mech_snx2_t10_ssp300_h2_crad0.1 z=5.8965 box 5.96 cMpc: 7531 halos, M* 4.648e+08 Msun, Ndot_int 8.365e+53, Ndot_esc(RT) 1.126e+53 ph/s; Ndot_int in halos with fesc_RT nan: 0.000
+   per (4 cMpc/h)^3: M* 4.648e+08, Ndot_esc 1.126e+53
+   log Mh bin  | n halos | M* share | Ndot_int share | Ndot_esc share | <fesc_RT> (N-weighted) | brightest M_UV
+    7.0- 7.5 |    4235 |    0.002 |          0.001 |          0.003 |    0.431 | -11.04
+    7.5- 8.0 |    2117 |    0.006 |          0.002 |          0.009 |    0.492 | -11.01
+    8.0- 8.5 |     828 |    0.041 |          0.040 |          0.136 |    0.463 | -12.22
+    8.5- 9.0 |     256 |    0.102 |          0.091 |          0.172 |    0.256 | -13.14
+    9.0- 9.5 |      71 |    0.141 |          0.159 |          0.215 |    0.181 | -14.63
+    9.5-10.0 |      21 |    0.441 |          0.455 |          0.328 |    0.097 | -17.05
+   10.0-10.5 |       3 |    0.268 |          0.252 |          0.137 |    0.073 | -17.26
 wrote /lustre/orion/ast031/proj-shared/pocvirk/CoDaIII/prod_sr/pocvirk/dyablo/28102026/runs/reio_v2/twins/budget_twins_z5.90.png
 wrote /lustre/orion/ast031/proj-shared/pocvirk/CoDaIII/prod_sr/pocvirk/dyablo/28102026/runs/reio_v2/twins/budget_twins_z5.90_fesc.png

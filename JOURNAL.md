@@ -2,6 +2,16 @@
 
 Recipe labels as in the README: `<SF>_<FB>[_snx<k>]_t<t_SNII>[_<hydro>]`.
 
+## 2026-11-26 (00:50): c_rad 0.1c at z = 5.90; thermal twin done at z = 5
+`comparisons/fiducial_twins/crad_sfr_*.png`, `comparisons/compare_twins_z5.90` (fiducial, thermal, c_rad 0.1c). Fiducial: smooth SF
+eps0.03 (n/n_th)^0.5, mech FB 2x SN, t_SNII 10 Myr, M_max 300 (closest MEGATRON recipe: smooth).
+- c_rad 0.1c vs 0.01c at z = 5.90 (box x_HII ~ 0.6): for the first time the 0.1c SFR is lower in every Mh bin at once
+  (0.79-0.87x from 10^8 to 10^10 Msun, 0.62x at 10^7.5-8); M* 4.65e8 vs 5.70e8 Msun; f_esc RT 0.135 vs 0.120. Still within the
+  snapshot-to-snapshot scatter of earlier z (0.65-1.25), so a hint, not a detection; z = 5 (end of the 0.1c run) will tell.
+- Thermal twin `eps0.03n0.5c0.1_thermal_snx2_t10` finished at z = 5 (x_HII 0.998, vs fiducial 0.96). Constant eps at z = 5.01
+  (0.87). The z = 5 comparison (fiducial, thermal, constant eps) runs automatically when constant eps ends (`twins/z5_watch.sh`).
+- Status: c_rad 0.1c z 5.78 (x_HII 0.83), 8 cMpc/h z 6.86 (0.35). No crashes.
+
 ## 2026-11-25 (18:50): c_rad 0.1c at z = 6.69; 8 cMpc/h UV LF at z = 7.33
 `comparisons/fiducial_twins/crad_sfr_*.png`, `comparisons/compare_twins_z6.69` (now 4 runs incl. c_rad 0.1c),
 `comparisons/box_size_4_vs_8mpc/uvlf_boxC_z8.52_8.09_7.33.png`. Fiducial: smooth SF eps0.03 (n/n_th)^0.5, mech FB 2x SN,
