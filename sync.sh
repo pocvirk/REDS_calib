@@ -29,6 +29,8 @@ done
 
 # fiducial vs twins (thermal FB, constant eps, c_rad 0.1c): f_esc budget by Mh + UV LF (runs/reio_v2/twins/twins_dash.sh), 2026-11-25
 [ -d $V/twins ] && { cp_png $V/twins $H/comparisons/fiducial_twins; cp -u $V/twins/budget_twins_*.txt $H/comparisons/fiducial_twins/ 2>/dev/null || true; }
+# fiducial c_rad 0.01c vs 0.1c (2 runs): dashboard comparison at z = 5 + f_esc budgets z 7.33-5 (runs/reio_v2/compare_crad), 2026-11-26
+[ -d $V/compare_crad ] && { C=$H/comparisons/crad_0.01c_vs_0.1c; cp_png $V/compare_crad $C; cp_png $V/compare_crad/z5.00 $C/dashboard_z5.00; cp -u $V/compare_crad/budget_z*.txt $C/ 2>/dev/null; cp -u $V/compare_crad/z5.00/dashboard_compare.pdf $C/dashboard_z5.00/ 2>/dev/null; true; }
 
 # boxC (8 cMpc/h) UV LF: latest LF figure; LF post-processing (aperture / metallicity / dust) and mock JWST photometry
 # (runs/reio_v2/boxsize/lfpp: extract.py, lfpp.py, mock_phot.py, mock_plots.py, mock_simcomp.py), 2026-11-26

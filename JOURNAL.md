@@ -477,3 +477,9 @@ c_rad 0.01c (closest MEGATRON recipe: smooth). 4 cMpc/h; each twin changes one t
 - `comparisons/boxC_lf_postproc/halo_maps/` (script `halo_maps.py`): log Mh 9.5 -> max at z = 6.29 and 6.69, columns intrinsic | PSF no noise | JADES noisy | JADES segmentation | GLIMPSE mu=20 noisy | segmentation, all radii overlaid.
 - JADES: nothing detected below log Mh ~10.2 (M_UV > -17.7, diffuse light at mu 27-30 vs 1 sigma/pix 26.6 mag/arcsec^2); at log Mh 10.5-10.8 only the central clump survives (f_det 0.5-0.7, 7-11 segments, r_np,obs 0.1-0.5 pkpc vs intrinsic r_1/2 1.2-1.8 pkpc).
 - GLIMPSE mu=20 recovers 75-94% of the light but splits it into 6-32 segments; r_np,obs 0.6-1.4 pkpc at log Mh >= 10.2.
+
+## 2026-11-26 (09:15): c_rad 0.01c vs 0.1c (4 cMpc/h fiducial, both to z = 5)
+- `comparisons/crad_0.01c_vs_0.1c/` (2-run dashboard at z = 5 + f_esc budgets at z 7.33, 6.69, 5.90, 5.00); SFR(Mh, z) test in `comparisons/fiducial_twins/crad_sfr_*.png`. NB the 0.1c run also has reion_accel = true.
+- Reionization: 0.1c ends at z ~ 5.3 (x_HI 2e-4 at z = 5, near Fan+06), 0.01c not finished (x_HI 0.04 at z = 5); tau_e 0.045 vs 0.042; Gamma(z = 5) -12.8 vs -13.4 (data -12.2 to -12.5).
+- 0.1c forms 15-20% fewer stars at all z (CSFRD ~0.1 dex lower already at z > 10, i.e. not a post-reionization effect); global f_esc(RT) higher: 0.21/0.17/0.135/0.083 vs 0.19/0.15/0.12/0.061 at z 7.33/6.69/5.90/5.00; f_esc(Mh) shape unchanged.
+- No mass-specific extra suppression (SFR ratio 0.1c/0.01c scatters 0.6-1.5 per bin, no kink).
