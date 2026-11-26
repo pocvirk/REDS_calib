@@ -113,7 +113,8 @@ fig.text(0.005, 0.003, TITLE, fontsize=6.5, ha="left", va="bottom")
 fig.tight_layout(rect=(0, 0.02, 1, 1)); fig.savefig(pre + "_halos.png", dpi=110); plt.close(fig)
 
 # (3) sizes
-fig, axs = plt.subplots(1, len(its), figsize=(6.5 * len(its), 5), squeeze=False); axs = axs[0]
+fig = plt.figure(figsize=(6.5 * len(its), 6.6)); gs = fig.add_gridspec(2, len(its), height_ratios=[5, 1.2])
+axs = [fig.add_subplot(gs[0, j]) for j in range(len(its))]; lax = fig.add_subplot(gs[1, :]); lax.axis("off")
 for ax, it in zip(axs, its):
     z = zs[it]; Mg = np.linspace(-22, -13, 50)
     for sv, col in SUR:
@@ -134,12 +135,12 @@ for ax, it in zip(axs, its):
     ax.plot(Mg, ono25(Mg, z), ":", color="k", lw=1.8, label="Ono+25 z~10-13 fit scaled to this z with (1+z)^-1.28 (extrapolated)")
     ap = 1 / (1 + z)
     for f, ls, lab in ((1, ":", "finest cell dx"), (4, "-.", "4 dx (effective resolution)")):
-        ax.axhline(f * DXMIN_C * ap, color="0.4", ls=ls, lw=1, label=f"sim {lab} = {f * DXMIN_C * ap:.2f} pkpc")
+        ax.axhline(f * DXMIN_C * ap, color="0.4", ls=ls, lw=1, label=f"sim {lab} ({DXMIN_C:.2f} ckpc" + (")" if f == 1 else " x 4)"))
     sc = {6.69: 5.56, 7.33: 5.26}.get(round(z, 2), 5.4)
     ax.axhline(0.5 * (0.040 if z < 7 else 0.050) * sc, color="C2", ls=":", lw=1.2, label="NIRCam PSF HWHM")
     ax.set_yscale("log"); ax.set_ylim(0.05, 10); ax.set_xlim(-12.5, -21.5); ax.grid(alpha=0.3)
     ax.set_xlabel(r"$M_{\rm UV}$"); ax.set_ylabel("half-light radius [pkpc]"); ax.set_title(f"z = {z:.2f}: sizes of Mh >= 10^9.5 halos (3 projections)", fontsize=9)
-    ax.legend(fontsize=5.5, loc="upper right")
+h_, l_ = axs[0].get_legend_handles_labels(); lax.legend(h_, l_, loc="upper center", ncol=3, fontsize=7.5, frameon=False)
 fig.text(0.005, 0.003, TITLE, fontsize=6.5, ha="left", va="bottom")
 fig.tight_layout(rect=(0, 0.025, 1, 1)); fig.savefig(pre + "_sizes.png", dpi=110); plt.close(fig)
 print("wrote", pre + "_lf.png", pre + "_halos.png", pre + "_sizes.png", pre + ".txt")

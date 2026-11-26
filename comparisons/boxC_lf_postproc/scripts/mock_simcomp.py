@@ -34,7 +34,8 @@ def fire2(M, z):
 def kawamata18(M):
     return 0.94 * 10 ** (-0.4 * (M + 21) * 0.46)
 
-fig, axs = plt.subplots(len(its), 4, figsize=(21, 4.9 * len(its)), squeeze=False)
+fig = plt.figure(figsize=(21, 4.9 * len(its) + 2.4)); gs = fig.add_gridspec(len(its) + 1, 4, height_ratios=[4.9] * len(its) + [2.4])
+axs = np.array([[fig.add_subplot(gs[r, c]) for c in range(4)] for r in range(len(its))]); lax = [fig.add_subplot(gs[-1, c]) for c in range(4)]
 txt = open(out.replace(".png", ".txt"), "w")
 for row, it in zip(axs, its):
     d = np.load(f"{NPZ}/boxC_iter{it}.npz", allow_pickle=True)
@@ -88,7 +89,7 @@ for row, it in zip(axs, its):
         ax.annotate("", xy=(xm, 1.8), xytext=(xm, 1.0), arrowprops=dict(arrowstyle="->", color="C7", alpha=0.6))
     ax.set_xscale("log"); ax.set_xlim(1e6, 2e10); ax.set_xlabel("M* [Msun] (current, R200)"); ax.set_title(f"z = {z:.2f}: size vs stellar mass", fontsize=10)
     for ax in row[:2]:
-        ax.set_yscale("log"); ax.set_ylim(0.05, 8); ax.set_ylabel("half-light radius [pkpc]"); ax.grid(alpha=0.3); ax.legend(fontsize=5.5, loc="upper left")
+        ax.set_yscale("log"); ax.set_ylim(0.05, 8); ax.set_ylabel("half-light radius [pkpc]"); ax.grid(alpha=0.3)
     # (c) size - depth, (d) detected light fraction - depth
     order = [sv for sv, _ in SUR if sv in H]; x = np.array([SB[sv] for sv in order])
     txt.write(f"== z = {z:.3f}; isophotal SB limits: " + ", ".join(f"{sv} {SB[sv]:.2f}" for sv in order) + "\n")
@@ -123,10 +124,13 @@ for row, it in zip(axs, its):
     row[2].set_yscale("log"); row[2].set_ylim(0.05, 3); row[2].set_ylabel("half-light radius [pkpc]")
     row[3].set_ylim(0, 1.05); row[3].set_ylabel("median fraction of L1600 (R200) in detected pixels")
     for a in row[2:]:
-        a.set_xlabel("isophotal SB detection limit [mag/arcsec^2] (source plane for lensed)"); a.grid(alpha=0.3); a.legend(fontsize=5.5, loc="upper left")
+        a.set_xlabel("isophotal SB detection limit [mag/arcsec^2] (source plane for lensed)"); a.grid(alpha=0.3)
         a.set_xlim(26.2, 30.6)
     row[2].set_title(f"z = {z:.2f}: size vs depth (massive halos, 3 projections)", fontsize=10)
     row[3].set_title(f"z = {z:.2f}: detected light fraction vs depth", fontsize=10)
+for c, la in enumerate(lax):
+    la.axis("off"); h_, l_ = axs[0, c].get_legend_handles_labels()
+    la.legend(h_, l_, loc="upper center", fontsize=6.6, frameon=False, ncol=2 if len(l_) > 14 else 1)
 fig.text(0.005, 0.003, "boxC 8 cMpc/h fiducial reio model (smooth SF eps0.03 (n/n_th)^0.5, mech FB 2x SN, t_SNII 10 Myr, M_max 300; closest MEGATRON "
          "recipe: smooth); mock NIRCam (CEERS/JADES/GLIMPSE depths, GLIMPSE lensed mu 5/20), no dust. Simulation trends: THESAN-ZOOM, THESAN, FLARES, FIRE-2.",
          fontsize=6.5, ha="left", va="bottom")
